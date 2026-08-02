@@ -1,5 +1,9 @@
 sample_id	group	bait_target
-TERF2_rep1	treatment	TERF2
-TERF2_rep2	treatment	TERF2
-IgG_rep1	control	IgG
-IgG_rep2	control	IgG
+TRF2_ChIP_01	treatment	TERF2
+TRF2_ChIP_02	treatment	TERF2
+TRF2_ChIP_03	treatment	TERF2
+TRF2_ChIP_04	treatment	TERF2
+IgG_ChIP_01	control	IgG
+IgG_ChIP_02	control	IgG
+IgG_ChIP_03	control	IgG
+IgG_ChIP_04	control	IgG
