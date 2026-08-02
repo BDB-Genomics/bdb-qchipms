@@ -1,0 +1,5 @@
+sample_id	group	bait_target
+TERF2_rep1	treatment	TERF2
+TERF2_rep2	treatment	TERF2
+IgG_rep1	control	IgG
+IgG_rep2	control	IgG

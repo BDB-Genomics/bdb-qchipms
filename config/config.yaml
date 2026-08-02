@@ -1,0 +1,9 @@
+# bdb-qchipms Configuration
+samples: "config/samples.tsv"
+protein_table: "data/protein_intensities.tsv"
+
+analysis:
+  bait: "TERF2"
+  control: "IgG"
+  fdr_cutoff: 0.05
+  log2fc_cutoff: 1.0
