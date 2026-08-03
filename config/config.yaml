@@ -26,3 +26,12 @@ summary_report:
   enriched_tsv: "results/enrichment/qchip_ms_enriched_proteins.tsv"
   annotated_bed: "results/annotation/qchip_ms_locus_annotated.bed"
   html_report: "results/reports/qchip_ms_summary.html"
+
+# Resource Configuration for Snakemake Retry Logic
+resources:
+  # Base memory in MB. Snakemake will multiply this by the attempt number on failure.
+  base_mem_mb: 4000
+  # Maximum memory limit in MB (e.g., 32GB)
+  max_mem_mb: 32000
+  # Base threads per job
+  threads: 2
