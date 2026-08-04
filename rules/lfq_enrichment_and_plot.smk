@@ -5,10 +5,15 @@ rule lfq_enrichment_and_plot:
     output:
         enriched_tsv=config["lfq_enrichment"]["enriched_tsv"],
         volcano_png=config["lfq_enrichment"]["volcano_png"]
-    resources:
-        mem_mb=get_mem_mb,
-        threads=config["resources"]["threads"]
+
+    log: "results/logs/lfq_enrichment.log"
+    benchmark: "results/benchmarks/lfq_enrichment.benchmark.txt"
+    threads: config["lfq_enrichment"]["threads"]
+    resources: mem_mb=get_mem_mb
+    conda: "../envs/r_env.yaml"
+    message: "Performing LFQ statistical enrichment and generating volcano plot..."
+
     shell:
         """
-        Rscript rules/scripts/qchip_ms_enrichment.R {input.protein_table} {output.enriched_tsv} {output.volcano_png}
+        Rscript rules/scripts/qchip_ms_enrichment.R {input.protein_table} {output.enriched_tsv} {output.volcano_png} > {log} 2>&1
         """

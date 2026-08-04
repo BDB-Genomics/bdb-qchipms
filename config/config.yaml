@@ -9,23 +9,27 @@ references:
 validate_inputs:
   samples_tsv: "config/samples.tsv"
   protein_table: "data/protein_intensities.tsv"
+  threads: 1
 
 lfq_enrichment:
   protein_table: "data/protein_intensities.tsv"
   uniprot_db: *uniprot
   enriched_tsv: "results/enrichment/qchip_ms_enriched_proteins.tsv"
   volcano_png: "results/plots/qchip_ms_volcano.png"
+  threads: 4
 
 locus_annotation:
   enriched_tsv: "results/enrichment/qchip_ms_enriched_proteins.tsv"
   peaks_bed: "data/macs2_peaks.bed"
   chrom_sizes: *chrom_sizes
   annotated_bed: "results/annotation/qchip_ms_locus_annotated.bed"
+  threads: 2
 
 summary_report:
   enriched_tsv: "results/enrichment/qchip_ms_enriched_proteins.tsv"
   annotated_bed: "results/annotation/qchip_ms_locus_annotated.bed"
   html_report: "results/reports/qchip_ms_summary.html"
+  threads: 1
 
 # Resource Configuration for Snakemake Retry Logic
 resources:
@@ -33,5 +37,3 @@ resources:
   base_mem_mb: 4000
   # Maximum memory limit in MB (e.g., 32GB)
   max_mem_mb: 32000
-  # Base threads per job
-  threads: 2
