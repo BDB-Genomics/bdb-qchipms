@@ -49,7 +49,7 @@ def main() -> None:
 
     try:
         if enriched_tsv.exists():
-            df = pd.read_csv(enriched_tsv, sep="\t")
+            df = pd.read_csv(enriched_tsv, sep="\t", usecols = ["Gene_Name", "Protein_ID", "Log2FC", "PValue", "FDR", "IsEnriched"])
             total_proteins = len(df)
             if "IsEnriched" in df.columns:
                 enriched_df = df[df["IsEnriched"]].copy()
