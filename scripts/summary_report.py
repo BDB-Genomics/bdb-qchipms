@@ -98,12 +98,19 @@ def main() -> None:
     except Exception as e:
         print(f"Error reading TSV: {e}")
 
-    # 2. Parse Annotated BED File
+    # 2. Parse Annotated BED File (Deduplicate using set)
     annotated_peaks = 0
     try:
         if annotated_bed.exists():
             with annotated_bed.open("r", encoding="utf-8") as f:
-                annotated_peaks = sum(1 for line in f if line.strip() and not line.startswith("#"))
+                unique_peaks = set()
+                for line in f:
+                    line_str = line.strip()
+                    if line_str and not line_str.startswith("#"):
+                        parts = line_str.split("\t", 3)
+                        if len(parts) >= 3:
+                            unique_peaks.add((parts[0], parts[1], parts[2]))
+                annotated_peaks = len(unique_peaks)
     except Exception as e:
         print(f"Error reading BED: {e}")
 
