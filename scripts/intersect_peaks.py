@@ -45,7 +45,7 @@ def main():
         ]
 
         written_peaks = 0
-        with open(peaks_bed, "r") as f_in, annotated_bed.open("w") as f_out:
+        with open(peaks_bed, "r", buffering=1024 * 1024) as f_in, annotated_bed.open("w", buffering=1024 * 1024) as f_out:
             f_out.write("#chr\tstart\tend\tprotein\tlog2fc\tfdr\n")
             for line in f_in:
                 line_str = line.strip()

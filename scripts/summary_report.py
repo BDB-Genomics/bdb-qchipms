@@ -102,7 +102,7 @@ def main() -> None:
     annotated_peaks = 0
     try:
         if annotated_bed.exists():
-            with annotated_bed.open("r", encoding="utf-8") as f:
+            with annotated_bed.open("r", encoding="utf-8", buffering=1024 * 1024) as f:
                 unique_peaks = set()
                 for line in f:
                     line_str = line.strip()
