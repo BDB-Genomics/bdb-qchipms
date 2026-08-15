@@ -11,6 +11,7 @@ rule lfq_enrichment_and_plot:
     threads: config["lfq_enrichment"]["threads"]
     resources: mem_mb=get_mem_mb
     conda: "../envs/r_env.yaml"
+    container: "docker://rocker/tidyverse:4.3.2"
     message: "Performing LFQ statistical enrichment and generating volcano plot..."
 
     shell:
