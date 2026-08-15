@@ -15,5 +15,5 @@ rule summary_report:
 
     shell:
         """
-        python scripts/summary_report.py {input.enriched_tsv} {input.annotated_bed} {output.html_report} > {log} 2>&1
+        python scripts/summary_report.py {input.enriched_tsv} {input.annotated_bed} {input.volcano_png} {output.html_report} > {log} 2>&1
         """
