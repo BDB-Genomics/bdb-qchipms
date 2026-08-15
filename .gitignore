@@ -4,3 +4,11 @@ logs/
 .cache/
 __pycache__/
 *.pyc
+*.log
+.mypy_cache/
+.ruff_cache/
+scratch/
+.ignore
+
+# graft's local graph cache — regenerable, not committed (run `graft build`).
+graft/

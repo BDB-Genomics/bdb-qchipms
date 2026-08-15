@@ -3,20 +3,23 @@ import sys
 from pathlib import Path
 import pandas as pd
 
+
 def main():
     if len(sys.argv) != 4:
         print("Usage: summary_report.py <enriched_tsv> <annotated_bed> <html_report>")
         sys.exit(1)
-        
+
     enriched_tsv = Path(sys.argv[1])
     annotated_bed = Path(sys.argv[2])
     html_report = Path(sys.argv[3])
-    
+
     # Parse data
     try:
         df = pd.read_csv(enriched_tsv, sep="\t")
         total_proteins = len(df)
-        enriched_count = len(df[df['IsEnriched'] == True]) if 'IsEnriched' in df.columns else total_proteins
+        enriched_count = (
+            len(df[df["IsEnriched"]]) if "IsEnriched" in df.columns else total_proteins
+        )
     except Exception as e:
         print(f"Error reading TSV: {e}")
         total_proteins, enriched_count = 0, 0
@@ -54,8 +57,9 @@ def main():
     html_report.parent.mkdir(parents=True, exist_ok=True)
     with html_report.open("w") as f:
         f.write(html_content)
-        
+
     print(f"Report generated at {html_report}")
+
 
 if __name__ == "__main__":
     main()
