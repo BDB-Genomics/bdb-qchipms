@@ -1,14 +1,1 @@
-.snakemake/
-results/
-logs/
-.cache/
-__pycache__/
-*.pyc
-*.log
-.mypy_cache/
-.ruff_cache/
-scratch/
-.ignore
-
-# graft's local graph cache — regenerable, not committed (run `graft build`).
-graft/
+Nothing needs to be added to .gitignore since only a README.md file was modified and no build artifacts, dependencies, or temporary files were detected in the changes.
