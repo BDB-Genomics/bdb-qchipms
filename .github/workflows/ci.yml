@@ -8,30 +8,36 @@ on:
 
 jobs:
   test:
+    name: Unit & Integration Tests
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        shell: bash -l {0}
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      - name: Set up Miniconda
-        uses: conda-incubator/setup-miniconda@v2
+      - name: Set up Python 3.10
+        uses: actions/setup-python@v5
         with:
-          auto-update-conda: true
-          environment-file: environment.yml
-          activate-environment: bdb-qchipms
-          miniforge-variant: Mambaforge
-          use-mamba: true
+          python-version: "3.10"
+          cache: "pip"
+
+      - name: Install System & Bioconda Tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y bedtools
+
+      - name: Install Python Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pandas pyyaml matplotlib seaborn scipy pytest snakemake
 
       - name: Verify Environment
         run: |
-          conda info
-          conda list
+          python --version
+          snakemake --version
+          bedtools --version
 
-      - name: Run Test Suite
+      - name: Run Pytest Test Suite
         run: |
           pytest tests/ -v
 
