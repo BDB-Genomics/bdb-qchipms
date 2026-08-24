@@ -1,0 +1,51 @@
+# BDB-Genomics: Phase 1 Base Multi-Omic Pipeline Configuration
+# Genome Build: GRCh38 / hg38
+
+project_name: "bdb_frontier_multiomics_phase1"
+version: "1.0.0"
+date: "2026-08-22"
+
+# Public Accession Datasets (100% Open Access & Free)
+public_repositories:
+  gwas_summary_stats:
+    study: "DIAMANTE Consortium (Mahajan et al. Nature Genetics)"
+    cohort_size: 1400000
+    ancestry: "EUR"
+    url: "https://www.ebi.ac.uk/gwas/"
+  ld_reference:
+    panel: "1000 Genomes Project Phase 3 (n=503 EUR)"
+    build: "GRCh38"
+  chromatin_accessibility:
+    biosample: "Human Pancreatic Islet / Endocrine Beta"
+    encode_accession: "ENCSR918TVE"
+    file_accession: "ENCFF176EOV"
+  enhancer_gene_links:
+    source: "ENCODE-rE2G 2026 Encyclopedia (Jesse Engreitz / Stanford)"
+    model: "Activity-by-Contact (ABC) + CRISPRi-validated"
+  transcription_factors:
+    source: "Nature 2026 Expanded Human TF Codebook (Hughes / Makeev)"
+    motifs_added: 130
+  locus_proteomics:
+    assay: "qChIP-MS (Yong et al. Nature Communications 2026)"
+    pride_accession: "PXD045612"
+  dark_proteome:
+    source: "Alternate RNA Decoding (Nikolai Slavov Nature 2026)"
+
+# Benchmark Target Loci for Phase 1 Validation
+target_loci:
+  - symbol: "TCF7L2"
+    chrom: "chr10"
+    lead_snp: "rs7903146"
+    lead_pos_grch38: 112998590
+  - symbol: "KCNQ1"
+    chrom: "chr11"
+    lead_snp: "rs2237892"
+    lead_pos_grch38: 2707248
+  - symbol: "PPARG"
+    chrom: "chr3"
+    lead_snp: "rs1801282"
+    lead_pos_grch38: 12393125
+  - symbol: "SLC30A8"
+    chrom: "chr8"
+    lead_snp: "rs13266634"
+    lead_pos_grch38: 117171038

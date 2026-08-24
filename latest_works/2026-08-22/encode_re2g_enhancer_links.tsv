@@ -1,0 +1,6 @@
+enhancer_id	chrom	enhancer_range	lead_variant	target_gene	target_ensg	genomic_distance_bp	cell_type	chromatin_activity	hic_contact_freq	abc_score	crispr_validated	crispr_effect	link_status
+ENH_TCF7L2_E1	chr10	chr10:112998000-112999200	rs7903146	TCF7L2	ENSG00000148737	77979	Pancreatic Islet (Endocrine Beta)	8.45	0.0168	0.143	YES	-0.42	High-Confidence Functional Loop
+ENH_TCF7L2_E2	chr10	chr10:113048500-113049800	rs12255372	TCF7L2	ENSG00000148737	27429	Pancreatic Islet (Endocrine Beta)	4.12	0.0245	0.106	YES	-0.18	High-Confidence Functional Loop
+ENH_KCNQ1_E1	chr11	chr11:2706800-2707900	rs2237892	KCNQ1	ENSG00000053918	241129	Pancreatic Islet (Beta)	6.8	0.0092	0.069	YES	-0.31	Nominal Link
+ENH_PPARG_E1	chr3	chr3:12392500-12393800	rs1801282	PPARG	ENSG00000132170	64283	Adipocyte / Hepatic	9.15	0.021	0.184	YES	-0.55	High-Confidence Functional Loop
+ENH_SLC30A8_E1	chr8	chr8:117170000-117171500	rs13266634	SLC30A8	ENSG00000160788	2050	Pancreatic Islet (Beta Secretory)	7.9	0.045	0.295	YES	-0.62	High-Confidence Functional Loop

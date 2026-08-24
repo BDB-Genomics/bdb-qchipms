@@ -1,0 +1,6 @@
+variant	total_evidence_tiers	tier1_credible_set	tier2_atac_peak	tier3_tf_footprint	tier4_encode_rE2G	tier5_qchipms_bound	active_combination	priority_tier
+rs7903146 (TCF7L2 Lead)	5	1	1	1	1	1	Tier 1: Fine-Mapped Credible Set (PP > 0.05) & Tier 2: Islet Open Chromatin Peak (ATAC-seq) & Tier 3: TF Footprint Disruption (TOBIAS / Codebook) & Tier 4: Enhancer-Gene 3D Link (ENCODE-rE2G) & Tier 5: Physical Protein Binding (bdb-qchipms)	TIER-A (High-Confidence Target)
+rs12255372 (TCF7L2 Secondary)	3	1	1	0	1	0	Tier 1: Fine-Mapped Credible Set (PP > 0.05) & Tier 2: Islet Open Chromatin Peak (ATAC-seq) & Tier 4: Enhancer-Gene 3D Link (ENCODE-rE2G)	TIER-B (Nominal Target)
+rs2237892 (KCNQ1 Lead)	4	1	1	1	1	0	Tier 1: Fine-Mapped Credible Set (PP > 0.05) & Tier 2: Islet Open Chromatin Peak (ATAC-seq) & Tier 3: TF Footprint Disruption (TOBIAS / Codebook) & Tier 4: Enhancer-Gene 3D Link (ENCODE-rE2G)	TIER-A (High-Confidence Target)
+rs1801282 (PPARG Pro12Ala)	2	1	0	0	1	0	Tier 1: Fine-Mapped Credible Set (PP > 0.05) & Tier 4: Enhancer-Gene 3D Link (ENCODE-rE2G)	TIER-B (Nominal Target)
+rs4506565 (TCF7L2 Minor)	1	0	1	0	0	0	Tier 2: Islet Open Chromatin Peak (ATAC-seq)	TIER-C (Uncertain)

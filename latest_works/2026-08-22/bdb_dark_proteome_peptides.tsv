@@ -1,0 +1,5 @@
+peptide_id	gene_origin	mass_da	chromatin_enrichment	description	peptide_sequence
+DARK_TCF7L2_uORF1	TCF7L2	2580.45	3.42x	Upstream open reading frame translated from non-canonical CUG initiation in 5' UTR	MAAGVPGGLLALLLPPAAALGAARGLL
+DARK_FOXA2_ALT_READTHROUGH	FOXA2	2490.82	5.18x	Stop-codon readthrough peptide generating extended C-terminal chromatin retention domain	KEEKLKKGLSLPPAAAAAGAGAPLSS
+DARK_KCNQ1_MISMATCH_ISO	KCNQ1	2724.31	2.85x	Stable alternate decoded peptide driven by tRNA abundance mismatch in islet cells	MVRPLNVRVNTLLLVLCAAGALAFR
+DARK_CTCF_MICROPROTEIN	CTCF-Adjacent IncRNA	4612.6	6.74x	Novel functional 42-aa microprotein translated from non-coding RNA interacting with cohesin loops	MGTRLWLLRLLAVALAWAGRAPGLSRAALLLLLRRGPARRRA

@@ -1,0 +1,8 @@
+>DARK_TCF7L2_uORF1 | Gene=TCF7L2 | Mass=2580.45Da | Upstream open reading frame translated from non-canonical CUG initiation in 5' UTR
+MAAGVPGGLLALLLPPAAALGAARGLL
+>DARK_FOXA2_ALT_READTHROUGH | Gene=FOXA2 | Mass=2490.82Da | Stop-codon readthrough peptide generating extended C-terminal chromatin retention domain
+KEEKLKKGLSLPPAAAAAGAGAPLSS
+>DARK_KCNQ1_MISMATCH_ISO | Gene=KCNQ1 | Mass=2724.31Da | Stable alternate decoded peptide driven by tRNA abundance mismatch in islet cells
+MVRPLNVRVNTLLLVLCAAGALAFR
+>DARK_CTCF_MICROPROTEIN | Gene=CTCF-Adjacent IncRNA | Mass=4612.6Da | Novel functional 42-aa microprotein translated from non-coding RNA interacting with cohesin loops
+MGTRLWLLRLLAVALAWAGRAPGLSRAALLLLLRRGPARRRA

@@ -1,0 +1,13 @@
+locus	rsid	chrom	pos	ref	alt	pp	motif_id	tf_name	family	source	ref_score	alt_score	delta	effect
+TCF7L2	rs7903146	chr10	112998590	C	T	0.94	FOXA2_MA0047.3	FOXA2	Forkhead (Pioneer)	JASPAR / Pasquali 2014	16.143	11.53	-4.613	Severe Motif Ablation (Loss of Binding)
+TCF7L2	rs7903146	chr10	112998590	C	T	0.94	NKX2-2_MA0778.1	NKX2-2	Homeobox (Endocrine)	JASPAR / Pasquali 2014	-15.348	-15.873	-0.525	Neutral / Minimal Impact
+TCF7L2	rs7903146	chr10	112998590	C	T	0.94	ZNF281_NAT2026	ZNF281	C2H2 Zinc Finger (Expanded)	Nature 2026 Codebook (HT-SELEX)	15.89	11.277	-4.613	Severe Motif Ablation (Loss of Binding)
+TCF7L2	rs12255372	chr10	113049143	G	T	0.058	FOXA2_MA0047.3	FOXA2	Forkhead (Pioneer)	JASPAR / Pasquali 2014	16.143	16.143	0.0	Neutral / Minimal Impact
+TCF7L2	rs12255372	chr10	113049143	G	T	0.058	NKX2-2_MA0778.1	NKX2-2	Homeobox (Endocrine)	JASPAR / Pasquali 2014	-15.348	-15.348	0.0	Neutral / Minimal Impact
+TCF7L2	rs12255372	chr10	113049143	G	T	0.058	ZNF281_NAT2026	ZNF281	C2H2 Zinc Finger (Expanded)	Nature 2026 Codebook (HT-SELEX)	-16.81	-17.335	-0.525	Neutral / Minimal Impact
+KCNQ1	rs2237892	chr11	2707248	C	T	0.885	FOXA2_MA0047.3	FOXA2	Forkhead (Pioneer)	JASPAR / Pasquali 2014	-999.0	-999.0	0.0	Neutral / Minimal Impact
+KCNQ1	rs2237892	chr11	2707248	C	T	0.885	NKX2-2_MA0778.1	NKX2-2	Homeobox (Endocrine)	JASPAR / Pasquali 2014	13.789	9.177	-4.613	Severe Motif Ablation (Loss of Binding)
+KCNQ1	rs2237892	chr11	2707248	C	T	0.885	ZNF281_NAT2026	ZNF281	C2H2 Zinc Finger (Expanded)	Nature 2026 Codebook (HT-SELEX)	15.89	15.89	0.0	Neutral / Minimal Impact
+PPARG	rs1801282	chr3	12393125	C	G	0.99	FOXA2_MA0047.3	FOXA2	Forkhead (Pioneer)	JASPAR / Pasquali 2014	-8.719	-8.719	0.0	Neutral / Minimal Impact
+PPARG	rs1801282	chr3	12393125	C	G	0.99	NKX2-2_MA0778.1	NKX2-2	Homeobox (Endocrine)	JASPAR / Pasquali 2014	-18.91	-18.91	0.0	Neutral / Minimal Impact
+PPARG	rs1801282	chr3	12393125	C	G	0.99	ZNF281_NAT2026	ZNF281	C2H2 Zinc Finger (Expanded)	Nature 2026 Codebook (HT-SELEX)	-16.81	-16.81	0.0	Neutral / Minimal Impact

@@ -1,0 +1,5 @@
+perturbed_tf	perturbation_type	target_gene	network_weight	baseline_expression_cpm	predicted_expression_cpm	fold_change	p_value	consequence
+FOXA2	In Silico Ablation (Simulating rs7903146 pioneer loss)	TCF7L2	0.78	45.2	15.8	-0.65	1.4e-12	Impaired glucose-stimulated GLP-1 and insulin signaling
+FOXA2	In Silico Ablation	PDX1	0.82	120.4	62.6	-0.48	3.2e-15	Pancreatic beta-cell dedifferentiation and maturity loss
+NKX2-2	In Silico Knockout	SLC30A8	0.64	88.0	37.0	-0.58	8.9e-09	Reduced zinc transporter accumulation in insulin secretory granules
+TCF7L2	In Silico Overexpression	ISL1	0.59	64.5	110.9	0.72	4.1e-07	Enhanced survival of endocrine progenitors against cytokine stress
