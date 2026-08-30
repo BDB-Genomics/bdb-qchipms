@@ -1,39 +1,50 @@
-# bdb-qchipms Configuration
+execution:
+  run_id: run_T2D_LOCUS_TCF7L2_pancreatic_islet
+  genome_build: GRCh38
+  output_dir: results/dynamic_runs
+  threads: 16
+locus:
+  locus_id: T2D_LOCUS_TCF7L2
+  chrom: chr10
+  lead_rsid: rs7903146
+  lead_pos: 112998590
+  window_size_bp: 500000
+tissue_epigenome:
+  primary_tissue: pancreatic_islet
+  atac_peak_file: data/real_web_data/human_pancreas_atac_ENCFF176EOV.bed.gz
+  bigwig_signal_file: data/real_web_data/human_pancreas_atac_ENCFF323APR.bigWig
+  secondary_tissues:
+  - liver_hepatocyte
+  - adipose_subcutaneous
+fine_mapping:
+  method: susie
+  ld_reference_panel: 1000G_EUR
+  credible_set_threshold: 0.95
+  max_causal_variants: 10
+  min_maf: 0.01
+transcription_factors:
+  footprinting_engine: tobias
+  motif_databases:
+  - JASPAR_2024
+  - NATURE_2026_EXPANDED
+  focus_tfs:
+  - TCF7L2
+  - HNF4A
+  min_delta_score_threshold: 2.0
+enhancer_linking:
+  method: activity_by_contact_abc
+  min_contact_score: 0.02
+  max_enhancer_distance_bp: 1000000
 
-# Global Static References
 references:
-  uniprot_db: &uniprot "data/references/uniprot_human.fasta"
-  chrom_sizes: &chrom_sizes "data/references/hg38.chrom.sizes"
-
-# Rule Configuration Blocks
+  genome: "data/references/hg38.chrom.sizes"
+  uniprot: "data/references/uniprot_human.fasta"
 validate_inputs:
-  samples_tsv: "config/samples.tsv"
-  protein_table: "data/protein_intensities.tsv"
-  threads: 1
-
+  min_depth: 10000
 lfq_enrichment:
-  protein_table: "data/protein_intensities.tsv"
-  uniprot_db: *uniprot
-  enriched_tsv: "results/enrichment/qchip_ms_enriched_proteins.tsv"
-  volcano_png: "results/plots/qchip_ms_volcano.png"
-  threads: 4
-
+  log2fc_threshold: 1.0
+  fdr_threshold: 0.05
 locus_annotation:
-  enriched_tsv: "results/enrichment/qchip_ms_enriched_proteins.tsv"
-  peaks_bed: "data/macs2_peaks.bed"
-  chrom_sizes: *chrom_sizes
-  annotated_bed: "results/annotation/qchip_ms_locus_annotated.bed"
-  threads: 2
-
+  radius_bp: 50000
 summary_report:
-  enriched_tsv: "results/enrichment/qchip_ms_enriched_proteins.tsv"
-  annotated_bed: "results/annotation/qchip_ms_locus_annotated.bed"
-  html_report: "results/reports/qchip_ms_summary.html"
-  threads: 1
-
-# Resource Configuration for Snakemake Retry Logic
-resources:
-  # Base memory in MB. Snakemake will multiply this by the attempt number on failure.
-  base_mem_mb: 4000
-  # Maximum memory limit in MB (e.g., 32GB)
-  max_mem_mb: 32000
+  enabled: true

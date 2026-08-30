@@ -1,0 +1,33 @@
+execution:
+  run_id: run_T2D_LOCUS_MTNR1B_cardiovascular
+  genome_build: GRCh38
+  output_dir: results/dynamic_runs
+  threads: 16
+locus:
+  locus_id: T2D_LOCUS_MTNR1B
+  chrom: chr11
+  lead_rsid: rs10830963
+  lead_pos: 92975544
+  window_size_bp: 500000
+tissue_epigenome:
+  primary_tissue: generic_cell
+  atac_peak_file: data/references/generic_peaks.bed
+  bigwig_signal_file: ''
+fine_mapping:
+  method: susie
+  ld_reference_panel: 1000G_EUR
+  credible_set_threshold: 0.95
+  max_causal_variants: 10
+  min_maf: 0.01
+transcription_factors:
+  footprinting_engine: tobias
+  motif_databases:
+  - JASPAR_2024
+  - NATURE_2026_EXPANDED
+  focus_tfs:
+  - TCF7L2
+  min_delta_score_threshold: 1.5
+enhancer_linking:
+  method: encode_re2g
+  min_contact_score: 0.02
+  max_enhancer_distance_bp: 1000000

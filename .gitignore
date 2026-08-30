@@ -18,3 +18,17 @@ graft/
 DOCUMENTS/
 credentials/
 *.tmp
+
+# local message screenshots / personal files
+message-msg_*.png
+data/incoming/
+data/real_web_data/
+
+# large reference binaries (re-downloadable, see scripts/build_eur_reference.sh)
+data/atlas/ref_panel/
+tools/plink2
+tools/bin/
+*.pgen
+*.bed
+*.bim
+*.fam

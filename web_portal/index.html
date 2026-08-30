@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BDB-Genomics — Causal Functional Genomics Engine</title>
+    <meta name="description"
+        content="A biophysically grounded computational engine resolving causal non-coding disease mechanisms through stereospecific pioneer factor gating and quantitative chromatin pull-down.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Header Navigation -->
+    <header class="site-header">
+        <div class="container header-container">
+            <a href="/" class="brand-link">
+                <span class="brand-mark">BDB</span>
+                <span class="brand-title">Genomics</span>
+            </a>
+            <nav class="nav-menu">
+                <a href="#overview">Overview</a>
+                <a href="#atlas">60-Locus Atlas</a>
+                <a href="#pipeline">Methodology</a>
+                <a href="#specs">Specifications</a>
+            </nav>
+            <div class="header-cta">
+                <button class="btn btn-outline" onclick="openModal()">Request Pilot Access</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container hero-container">
+            <div class="terminal-meta">
+                <span class="status-indicator"></span>
+                <span>PLATFORM STATUS: PILOT READY &bull; BUILD 2026.08</span>
+            </div>
+
+            <h1 class="hero-heading">
+                Resolving the 96.4% non-coding therapeutic blind spot in human disease genetics.
+            </h1>
+
+            <p class="hero-lead">
+                Over 90% of GWAS disease-associated variants reside in non-coding regulatory chromatin. BDB-Genomics
+                replaces linear nearest-gene heuristics with Bayesian fine-mapping, stereospecific pioneer factor
+                gating, and quantitative chromatin mass spectrometry.
+            </p>
+
+            <div class="hero-action-bar">
+                <button class="btn btn-solid" onclick="openModal()">Apply for Pilot Evaluation</button>
+                <a href="#atlas" class="btn btn-ghost">View Interactive Benchmark &rarr;</a>
+            </div>
+
+            <!-- Quantitative Spec Strip -->
+            <div class="spec-strip">
+                <div class="spec-item">
+                    <div class="spec-num">60</div>
+                    <div class="spec-title">Curated T2D Loci</div>
+                    <div class="spec-desc">Fine-mapped with SuSiE (PIP &ge; 0.95)</div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-num">10.5 bp</div>
+                    <div class="spec-title">DNA Helical Pitch</div>
+                    <div class="spec-desc">Stereospecific co-factor phasing</div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-num">2.4&times;</div>
+                    <div class="spec-title">Clinical Approval Odds</div>
+                    <div class="spec-desc">For targets with causal genetic proof</div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-num">0.18s</div>
+                    <div class="spec-title">Config Resolution</div>
+                    <div class="spec-desc">C-accelerated schema compilation</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Problem / Technical Differentiation -->
+    <section id="overview" class="content-section border-top">
+        <div class="container">
+            <div class="section-label">01 / PROBLEM STATEMENT</div>
+            <h2 class="section-heading">The Nearest-Gene Assumption Causes Systematic Phase II Failures</h2>
+
+            <div class="grid-two-col" style="margin-top: 2.5rem;">
+                <div class="panel panel-muted">
+                    <div class="panel-tag tag-warning">Legacy Paradigm (Nearest-Gene Heuristic)</div>
+                    <h3 class="panel-heading">1D Linear Proximity Shortcut</h3>
+                    <p class="panel-body">
+                        Standard GWAS post-processing assigns a non-coding variant to the nearest transcription start
+                        site. In over 70% of non-coding loci, 3D chromosome conformation capture (Hi-C / Micro-C) proves
+                        enhancers loop over intermediate genes to regulate distant promoters hundreds of kilobases away.
+                    </p>
+                    <div class="panel-footer">
+                        <code>Failure Mode: $1B+ wasted developing molecules against non-causal bystander genes.</code>
+                    </div>
+                </div>
+
+                <div class="panel panel-active">
+                    <div class="panel-tag tag-success">BDB-Genomics Engine</div>
+                    <h3 class="panel-heading">Mechanistic Multi-Omics Triangulation</h3>
+                    <p class="panel-body">
+                        Integrates LD-decoupled Bayesian fine-mapping with base-resolution digital footprinting
+                        (TOBIAS), stereospecific pioneer factor gating (FOXA2, PDX1, HNF4A), and Activity-by-Contact
+                        (ABC) enhancer looping to establish causal target genes.
+                    </p>
+                    <div class="panel-footer">
+                        <code>Output: Biophysically validated target dossier with experimental pull-down validation.</code>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Locus Atlas Demo -->
+    <section id="atlas" class="content-section border-top">
+        <div class="container">
+            <div class="section-label">02 / BENCHMARK ATLAS</div>
+            <h2 class="section-heading">Interactive Locus Inspector (Top T2D Disease Loci)</h2>
+            <p class="section-sub">Select a curated locus to inspect the fine-mapped causal variant, biophysical
+                phasing, and target gene assignment.</p>
+
+            <div class="atlas-terminal">
+                <div class="atlas-sidebar">
+                    <div class="atlas-sidebar-header">Select Benchmark Locus</div>
+                    <div class="locus-btn-group">
+                        <button class="locus-btn active" onclick="loadLocus('tcf7l2')">
+                            <span class="locus-id">T2D_LOCUS_001</span>
+                            <span class="locus-title">TCF7L2 &bull; rs7903146</span>
+                            <span class="locus-meta">chr10:112,998,590 (Islet)</span>
+                        </button>
+                        <button class="locus-btn" onclick="loadLocus('mtnr1b')">
+                            <span class="locus-id">T2D_LOCUS_002</span>
+                            <span class="locus-title">MTNR1B &bull; rs10830963</span>
+                            <span class="locus-meta">chr11:92,708,710 (Islet)</span>
+                        </button>
+                        <button class="locus-btn" onclick="loadLocus('slc30a8')">
+                            <span class="locus-id">T2D_LOCUS_003</span>
+                            <span class="locus-title">SLC30A8 &bull; rs13266634</span>
+                            <span class="locus-meta">chr8:117,172,514 (Beta-cell)</span>
+                        </button>
+                        <button class="locus-btn" onclick="loadLocus('hnf4a')">
+                            <span class="locus-id">T2D_LOCUS_004</span>
+                            <span class="locus-title">HNF4A &bull; rs1800574</span>
+                            <span class="locus-meta">chr20:44,414,890 (Hepatocyte)</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="atlas-content" id="locusDetailView">
+                    <!-- Populated dynamically by app.js -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4-Step Methodology -->
+    <section id="pipeline" class="content-section border-top">
+        <div class="container">
+            <div class="section-label">03 / METHODOLOGY</div>
+            <h2 class="section-heading">The 4-Stage Discovery Architecture</h2>
+
+            <div class="pipeline-flow">
+                <div class="flow-card">
+                    <div class="flow-step">STAGE 01</div>
+                    <h3 class="flow-title">Bayesian Fine-Mapping</h3>
+                    <p class="flow-desc">Sum of Single Effects (SuSiE) over LD reference panels isolates single causal
+                        variants with Posterior Inclusion Probability (PIP &ge; 0.95).</p>
+                </div>
+                <div class="flow-card">
+                    <div class="flow-step">STAGE 02</div>
+                    <h3 class="flow-title">Digital Footprinting</h3>
+                    <p class="flow-desc">TOBIAS base-pair footprinting quantifies chromatin occupancy, filtering out
+                        passive transcription factor motifs.</p>
+                </div>
+                <div class="flow-card">
+                    <div class="flow-step">STAGE 03</div>
+                    <h3 class="flow-title">Stereospecific Phasing</h3>
+                    <p class="flow-desc">Evaluates 10.5 bp helical pitch distances between pioneer factors and recruited
+                        co-activators to verify 3D enhanceosome formation.</p>
+                </div>
+                <div class="flow-card">
+                    <div class="flow-step">STAGE 04</div>
+                    <h3 class="flow-title">qChIP-MS Validation</h3>
+                    <p class="flow-desc">Quantitative chromatin pull-down mass spectrometry verifies allele-specific
+                        protein complex recruitment in primary tissue.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pilot Access Modal -->
+    <div class="modal-overlay" id="pilotModal" onclick="handleModalOverlay(event)">
+        <div class="modal-window">
+            <div class="modal-top">
+                <div>
+                    <span class="modal-eyebrow">BDB-GENOMICS PILOT ACCESS</span>
+                    <h3 class="modal-title">Request Research or Commercial Evaluation</h3>
+                </div>
+                <button class="modal-close-btn" onclick="closeModal()">&times;</button>
+            </div>
+
+            <form id="evaluationForm" onsubmit="handleFormSubmit(event)">
+                <div class="input-grid">
+                    <div class="input-field">
+                        <label>Principal Investigator / Contact Name</label>
+                        <input type="text" id="leadName" required placeholder="e.g. Dr. Jane Doe">
+                    </div>
+                    <div class="input-field">
+                        <label>Institutional / Corporate Email</label>
+                        <input type="email" id="leadEmail" required placeholder="name@institution.org">
+                    </div>
+                </div>
+
+                <div class="input-grid">
+                    <div class="input-field">
+                        <label>Organization / Company</label>
+                        <input type="text" id="leadOrg" required
+                            placeholder="e.g. Karolinska Institutet / Broad / Adaptyv">
+                    </div>
+                    <div class="input-field">
+                        <label>Evaluation Type</label>
+                        <select id="leadType">
+                            <option value="commercial_pilot">Commercial Pilot (Target Dossier Licensing)</option>
+                            <option value="academic_collab">Academic Research Collaboration</option>
+                            <option value="custom_pipeline">Custom Locus Fine-Mapping Run</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="input-field">
+                    <label>Target Disease Area or Loci of Interest</label>
+                    <textarea id="leadNotes" rows="3"
+                        placeholder="Specify disease context (e.g. Type 2 Diabetes islet enhancers, Liver metabolic QTLs, or specific lead rsIDs)..."></textarea>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-solid btn-full">Submit Evaluation Request</button>
+                </div>
+            </form>
+
+            <div id="modalSuccessState" class="success-notice" style="display: none;">
+                <div class="success-icon">&check;</div>
+                <h3>Request Registered</h3>
+                <p>Your technical evaluation parameters have been recorded. Our computational biology team will follow
+                    up within 24 hours.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer border-top">
+        <div class="container footer-container">
+            <div class="footer-left">
+                <div class="brand-link">
+                    <span class="brand-mark">BDB</span>
+                    <span class="brand-title">Genomics</span>
+                </div>
+                <p class="footer-note">A biophysically grounded causal genomics engine.</p>
+            </div>
+            <div class="footer-right">
+                <p>&copy; 2026 BDB-Genomics. All rights reserved.</p>
+                <p>Proprietary Closed-Source Pipeline &bull; Kathmandu &bull; Stockholm &bull; Boston</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
