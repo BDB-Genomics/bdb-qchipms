@@ -1,0 +1,5 @@
+Source Name	LibraryID	Characteristics [ff_ontology]	Characteristics [description]	Characteristics [Category]
+10049-101G4	CNhs11756	FF:10049-101G4	pancreas, adult, donor1	tissues
+10824-111C5	CNhs12334	FF:10824-111C5	chronic myelogenous leukemia cell line:K562 ENCODE, biol_rep1	cell lines
+11243-116E1	CNhs10872	FF:11243-116E1	Endothelial Cells - Umbilical vein, donor1	primary cells
+11469-119C2	CNhs12065	FF:11469-119C2	Preadipocyte - perirenal, donor1	primary cells

@@ -116,5 +116,13 @@
     "title": "Pancreatic islet chromatin accessibility and conformation reveals distal enhancer networks of type 2 diabetes risk.",
     "journal": "Nat Commun. 2019;10(1):2078.",
     "json_artifact": "data/references/greenwald2019_pubmed_31064983.json"
+  },
+  "fantom5_sample_annotation_artifact": {
+    "source_url": "https://fantom.gsc.riken.jp/5/datafiles/reprocessed/metadata_latest/HumanSamples2.0_RefEx-refined.sdrf.tsv",
+    "grep_artifact": "data/references/fantom5_sample_annotation_grep.txt"
+  },
+  "fantom5_extracted_tpms_artifact": {
+    "source_url": "https://fantom.gsc.riken.jp/5/datafiles/latest/extra/gene_level_expression/hg19.gene_phase1and2combined_tpm.osc.txt.gz",
+    "extracted_artifact": "data/references/fantom5_extracted_tpms.txt"
   }
 }
