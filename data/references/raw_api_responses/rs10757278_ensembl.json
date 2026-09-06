@@ -1,0 +1,31 @@
+{
+  "ambiguity": "N",
+  "source": "Variants (including SNPs and indels) imported from dbSNP",
+  "MAF": null,
+  "minor_allele": null,
+  "mappings": [
+    {
+      "allele_string": "A/C/G/T",
+      "seq_region_name": "9",
+      "ancestral_allele": "A",
+      "start": 22124478,
+      "coord_system": "chromosome",
+      "assembly_name": "GRCh38",
+      "strand": 1,
+      "location": "9:22124478-22124478",
+      "end": 22124478
+    }
+  ],
+  "evidence": [
+    "Frequency",
+    "1000Genomes",
+    "Cited",
+    "Phenotype_or_Disease",
+    "TOPMed",
+    "gnomAD"
+  ],
+  "name": "rs10757278",
+  "var_class": "SNP",
+  "most_severe_consequence": "intergenic_variant",
+  "synonyms": []
+}

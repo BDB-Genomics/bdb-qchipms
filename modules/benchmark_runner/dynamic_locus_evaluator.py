@@ -135,26 +135,24 @@ class DynamicBiophysicalEngine:
             # Check if TSS falls within the convergent CTCF domain
             in_tad = (locus_data["ctcf_left"]["pos"] <= tss_pos <= locus_data["ctcf_right"]["pos"]) if is_convergent else False
             promoter_open = gene_info.get("promoter_open", True)
-            
-            # 1. Chromatin Polymer Contact Prior: P_contact = (d_0 / (dist_bp + d_0))^gamma
+            # 1. In Silico ABC Polymer Contact Prior: P_contact = (d_0 / (dist_bp + d_0))^gamma
             # d_0 = 5000 bp saturation; gamma = 1.0 inside TAD, gamma = 1.75 across boundary
             gamma = 1.0 if in_tad else 1.75
             p_contact = (5000.0 / (dist_bp + 5000.0)) ** gamma
             
-            # 2. TAD Boundary & CTCF Insulation Factor
+            # 2. TAD Boundary & CTCF Domain Insulation Factor
             f_tad = 1.0 if in_tad else 0.08
             
             # 3. Cell-Type Promoter Competence (CAGE TPM / ATAC Open State)
+            # Active threshold: CAGE >= 1 TPM; closed/unexpressed promoters silenced
             cage_tpm = gene_info.get("cage_tpm", 50.0 if promoter_open else 0.0)
-            if promoter_open:
-                a_promoter = math.log10(max(1.0, cage_tpm) + 9.0) # Scaled ~1.0 to 2.3
+            if promoter_open and cage_tpm >= 1.0:
+                a_promoter = math.log10(cage_tpm + 9.0) # Scaled ~1.0 to 2.3
             else:
                 a_promoter = 0.005 # Silenced promoters cannot establish productive transactivation
             
-            # 4. Sequence-Level Biophysical Perturbation Factor
-            phys_weight = max(1.0, abs(delta_phi) + (helical_theta / 45.0) + abs(delta_ebend))
-            
-            final_target_score = p_contact * f_tad * a_promoter * phys_weight
+            # 4. In Silico ABC Target Score: Contact Prior * Boundary Factor * Promoter Competence
+            final_target_score = p_contact * f_tad * a_promoter
             
             gene_rankings.append({
                 "gene": gene_name,
@@ -162,13 +160,15 @@ class DynamicBiophysicalEngine:
                 "in_tad": in_tad,
                 "promoter_open": promoter_open,
                 "cage_tpm": cage_tpm,
+                "gamma": gamma,
+                "f_tad": f_tad,
                 "p_contact": round(p_contact, 4),
-                "f_tad": round(f_tad, 4),
                 "a_promoter": round(a_promoter, 4),
                 "target_score": round(final_target_score, 4)
             })
             
-        # Calculate competitive share among active promoters in domain
+        # 5. Multi-Promoter Kinetic Competition: Locus-Local Active Promoter Denominator
+        # Excludes silenced promoters (< 1 TPM) and insulated promoters across boundaries
         sum_active = sum(g["target_score"] for g in gene_rankings if g["promoter_open"] and g["in_tad"])
         for g in gene_rankings:
             g["competitive_share"] = round(g["target_score"] / sum_active, 4) if sum_active > 0 and g["promoter_open"] and g["in_tad"] else 0.0

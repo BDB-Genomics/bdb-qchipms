@@ -1,0 +1,46 @@
+{
+  "clinical_significance": [
+    "risk factor"
+  ],
+  "evidence": [
+    "Frequency",
+    "1000Genomes",
+    "Cited",
+    "Phenotype_or_Disease",
+    "TOPMed",
+    "gnomAD"
+  ],
+  "var_class": "SNP",
+  "synonyms": [
+    "rs17817021",
+    "PA166155013",
+    "RCV000201907",
+    "VCV000217824",
+    "NM_001395548.1:c.*888T>A",
+    "NM_001206670.1:c.*888T>C",
+    "NM_001206670.1:c.*888T>A",
+    "NM_001395548.1:c.*888T>C",
+    "NM_198442.1:c.*888C>A",
+    "NM_198442.1:c.*888C>T",
+    "610966.0003"
+  ],
+  "most_severe_consequence": "intron_variant",
+  "minor_allele": null,
+  "mappings": [
+    {
+      "seq_region_name": "16",
+      "start": 53767042,
+      "end": 53767042,
+      "strand": 1,
+      "assembly_name": "GRCh38",
+      "ancestral_allele": "T",
+      "coord_system": "chromosome",
+      "allele_string": "T/C",
+      "location": "16:53767042-53767042"
+    }
+  ],
+  "MAF": null,
+  "source": "Variants (including SNPs and indels) imported from dbSNP",
+  "ambiguity": "Y",
+  "name": "rs1421085"
+}

@@ -1,0 +1,37 @@
+{
+  "MAF": null,
+  "synonyms": [
+    "NM_001546.4:c.*1930G>A",
+    "NM_001546.3:c.*1930G>A",
+    "PA166157621",
+    "rs17467153",
+    "rs61163584"
+  ],
+  "name": "rs6983267",
+  "source": "Variants (including SNPs and indels) imported from dbSNP",
+  "minor_allele": null,
+  "evidence": [
+    "Frequency",
+    "1000Genomes",
+    "Cited",
+    "Phenotype_or_Disease",
+    "TOPMed",
+    "gnomAD"
+  ],
+  "mappings": [
+    {
+      "strand": 1,
+      "coord_system": "chromosome",
+      "allele_string": "G/T",
+      "start": 127401060,
+      "seq_region_name": "8",
+      "end": 127401060,
+      "assembly_name": "GRCh38",
+      "ancestral_allele": "G",
+      "location": "8:127401060-127401060"
+    }
+  ],
+  "most_severe_consequence": "non_coding_transcript_exon_variant",
+  "var_class": "SNP",
+  "ambiguity": "K"
+}

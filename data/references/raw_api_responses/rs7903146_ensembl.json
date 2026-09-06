@@ -1,0 +1,43 @@
+{
+  "clinical_significance": [
+    "risk factor",
+    "likely risk allele"
+  ],
+  "source": "Variants (including SNPs and indels) imported from dbSNP",
+  "minor_allele": null,
+  "MAF": null,
+  "synonyms": [
+    "VCV001692994",
+    "VCV000007413",
+    "RCV000007838",
+    "RCV002259421",
+    "PA166154084",
+    "rs60693287",
+    "602228.0001"
+  ],
+  "name": "rs7903146",
+  "most_severe_consequence": "intron_variant",
+  "var_class": "SNP",
+  "ambiguity": "B",
+  "evidence": [
+    "Frequency",
+    "1000Genomes",
+    "Cited",
+    "Phenotype_or_Disease",
+    "TOPMed",
+    "gnomAD"
+  ],
+  "mappings": [
+    {
+      "coord_system": "chromosome",
+      "strand": 1,
+      "seq_region_name": "10",
+      "start": 112998590,
+      "allele_string": "C/G/T",
+      "assembly_name": "GRCh38",
+      "end": 112998590,
+      "location": "10:112998590-112998590",
+      "ancestral_allele": "T"
+    }
+  ]
+}

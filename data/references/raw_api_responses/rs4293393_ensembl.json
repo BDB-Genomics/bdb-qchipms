@@ -1,0 +1,36 @@
+{
+  "source": "Variants (including SNPs and indels) imported from dbSNP",
+  "minor_allele": null,
+  "name": "rs4293393",
+  "synonyms": [
+    "rs57088256",
+    "rs17525938",
+    "rs386592254",
+    "rs56548063"
+  ],
+  "MAF": null,
+  "var_class": "SNP",
+  "ambiguity": "R",
+  "most_severe_consequence": "intron_variant",
+  "mappings": [
+    {
+      "start": 20353266,
+      "allele_string": "A/G",
+      "seq_region_name": "16",
+      "strand": 1,
+      "coord_system": "chromosome",
+      "ancestral_allele": "A",
+      "location": "16:20353266-20353266",
+      "end": 20353266,
+      "assembly_name": "GRCh38"
+    }
+  ],
+  "evidence": [
+    "Frequency",
+    "1000Genomes",
+    "Cited",
+    "Phenotype_or_Disease",
+    "TOPMed",
+    "gnomAD"
+  ]
+}

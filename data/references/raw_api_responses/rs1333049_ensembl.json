@@ -1,0 +1,41 @@
+{
+  "source": "Variants (including SNPs and indels) imported from dbSNP",
+  "name": "rs1333049",
+  "minor_allele": "C",
+  "mappings": [
+    {
+      "location": "9:22125504-22125504",
+      "strand": 1,
+      "start": 22125504,
+      "coord_system": "chromosome",
+      "seq_region_name": "9",
+      "assembly_name": "GRCh38",
+      "ancestral_allele": "C",
+      "allele_string": "G/A/C",
+      "end": 22125504
+    }
+  ],
+  "MAF": 0.418564,
+  "evidence": [
+    "Frequency",
+    "1000Genomes",
+    "Cited",
+    "Phenotype_or_Disease",
+    "TOPMed",
+    "gnomAD"
+  ],
+  "var_class": "SNP",
+  "most_severe_consequence": "intergenic_variant",
+  "synonyms": [
+    "rs59077428",
+    "rs17761501",
+    "rs58844516",
+    "PA166157726",
+    "RCV001003460",
+    "VCV000812642"
+  ],
+  "clinical_significance": [
+    "risk factor"
+  ],
+  "ambiguity": "V"
+}

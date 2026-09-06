@@ -72,8 +72,8 @@ def generate_pdf():
         'SectionHead',
         parent=styles['Normal'],
         fontName='Helvetica-Bold',
-        fontSize=8,
-        leading=10,
+        fontSize=7.8,
+        leading=9.8,
         textColor=accent_blue
     )
 
@@ -90,8 +90,8 @@ def generate_pdf():
         'THStyle',
         parent=styles['Normal'],
         fontName='Helvetica-Bold',
-        fontSize=6,
-        leading=7.5,
+        fontSize=5.8,
+        leading=7.2,
         textColor=colors.white
     )
 
@@ -105,8 +105,8 @@ def generate_pdf():
         'TDStyle',
         parent=styles['Normal'],
         fontName='Helvetica',
-        fontSize=5.8,
-        leading=7.5,
+        fontSize=5.6,
+        leading=7.2,
         textColor=text_dark
     )
 
@@ -121,7 +121,7 @@ def generate_pdf():
     # 1. Header Table
     header_data = [
         [
-            Paragraph("<b>BDB-GENOMICS</b> | 3D BIOPHYSICAL REGULATORY ENGINE", title_style),
+            Paragraph("<b>BDB-GENOMICS</b> | FAST IN SILICO ABC REGULATORY ENGINE", title_style),
             Paragraph("<b>SAMPLE AUDIT DOSSIER</b><br/><font color='#64748b'>Commercial Deliverable Specification</font>", ParagraphStyle('RHead', parent=meta_style, alignment=2))
         ],
         [
@@ -139,31 +139,31 @@ def generate_pdf():
     ]))
     elements.append(header_table)
     elements.append(Spacer(1, 2))
-    elements.append(HRFlowable(width="100%", thickness=1.2, color=accent_blue, spaceBefore=1, spaceAfter=3))
+    elements.append(HRFlowable(width="100%", thickness=1.2, color=accent_blue, spaceBefore=1, spaceAfter=2))
 
     # 2. Executive Scope & Objective Box
     callout_text = """
-    <b>AUDIT OBJECTIVE:</b> CRISPR screening and GWAS hits frequently map to non-coding deserts where 1D distance heuristics (Nearest-TSS) misassign the functional gene. BDB-Genomics executes a 14-day biophysical audit integrating chromatin polymer contact priors, CTCF boundary insulation, and cell-type promoter competence (CAGE/ATAC) to rank causal targets and eliminate false-positive validation pipelines.
+    <b>AUDIT OBJECTIVE:</b> CRISPR screening and GWAS hits frequently map to non-coding deserts where 1D distance heuristics (Nearest-TSS) misassign the functional gene. BDB-Genomics executes a 14-day computational audit using a fast In Silico Activity-by-Contact (ABC) framework (Fulco et al. 2019 Nat Genet) enhanced with parameterized CTCF boundary gating (Rao et al. 2014) and cell-type promoter competence (CAGE/FANTOM5) to rank causal targets without requiring expensive per-cell Hi-C assays.
     <br/><b>BENCHMARK GROUND TRUTH:</b> On held-out CRISPRi distance-failure loci (N=67 where 1D nearest-TSS has 0% accuracy), BDB-Genomics achieves <b>83.58% Top-3 accuracy (56/67)</b>, outperforming the Broad Institute ABC model (79.10%, 53/67). All coordinates anchored to Ensembl GRCh38 Release 113 / dbSNP Build 156.
     """
-    callout_data = [[Paragraph(callout_text, ParagraphStyle('Callout', parent=body_text, fontSize=6.2, leading=8.2))]]
+    callout_data = [[Paragraph(callout_text, ParagraphStyle('Callout', parent=body_text, fontSize=6.1, leading=8.0))]]
     callout_table = Table(callout_data, colWidths=[572])
     callout_table.setStyle(TableStyle([
         ('BACKGROUND', (0,0), (-1,-1), colors.HexColor("#eff6ff")),
         ('BOX', (0,0), (-1,-1), 0.8, colors.HexColor("#bfdbfe")),
-        ('TOPPADDING', (0,0), (-1,-1), 3),
-        ('BOTTOMPADDING', (0,0), (-1,-1), 3),
+        ('TOPPADDING', (0,0), (-1,-1), 2.5),
+        ('BOTTOMPADDING', (0,0), (-1,-1), 2.5),
         ('LEFTPADDING', (0,0), (-1,-1), 5),
         ('RIGHTPADDING', (0,0), (-1,-1), 5),
     ]))
     elements.append(callout_table)
-    elements.append(Spacer(1, 4))
+    elements.append(Spacer(1, 3))
 
     # 3. Table 1: 8q24.21 Screen De-risking Matrix
     elements.append(Paragraph("<b>TABLE 1: 8q24.21 Oncology Desert Screen Audit (Fulco et al. 2016 Science e1-e4 + rs6983267 Enhancer)</b>", section_heading))
-    locus1_sub = "<i>Context: Core 8q24.21 cluster. 1D nearest-TSS assigns inactive lncRNAs (CASC8, CCAT2). BDB tracks active polymer contact to MYC (244-334 kb distal). Note: e5-e7 form ultralong loops (>1.8 Mb) at outer boundary.</i>"
+    locus1_sub = "<i>Context: Core 8q24.21 cluster in K562. 1D nearest-TSS assigns inactive lncRNAs (CASC8, CCAT2). BDB tracks active polymer contact to MYC (244-334 kb distal).</i>"
     elements.append(Paragraph(locus1_sub, meta_style))
-    elements.append(Spacer(1, 2))
+    elements.append(Spacer(1, 1.5))
 
     # Col Widths: 572 total -> [46, 92, 70, 44, 68, 44, 40, 40, 128]
     t1_headers = [
@@ -229,34 +229,33 @@ def generate_pdf():
             Paragraph("chr8:127401060 (SNP)", td_style),
             Paragraph("CCAT2 (lncRNA)", td_style),
             Paragraph("661 bp", td_center),
-            Paragraph("<b>MYC</b> (Protein-Coding)", td_style),
+            Paragraph("<b>MYC</b> (Oncogene)", td_style),
             Paragraph("334.4 kb", td_center),
             Paragraph("0.0147", td_center),
-            Paragraph("3.1% (95% nc)", td_center),
-            Paragraph("<font color='#166534'><b>[RESOLVED DUAL TARGET]</b></font> Sits in CCAT2; loops 334 kb to MYC. 3C proves TCF4/beta-catenin transactivates MYC.", td_style)
+            Paragraph("66.7%", td_center),
+            Paragraph("<font color='#166534'><b>[PROMOTE MYC / DEMOTE CCAT2]</b></font> Sits in CCAT2; CCAT2 promoter silenced in K562. 3D contact drives MYC (Pomerantz 2009 3C).", td_style)
         ]
     ]
 
     t1 = Table(t1_rows, colWidths=[46, 92, 70, 44, 68, 44, 40, 40, 128])
     t1.setStyle(TableStyle([
         ('BACKGROUND', (0,0), (-1,0), primary_color),
-        ('BOTTOMPADDING', (0,0), (-1,-1), 1.5),
-        ('TOPPADDING', (0,0), (-1,-1), 1.5),
+        ('BOTTOMPADDING', (0,0), (-1,-1), 1.2),
+        ('TOPPADDING', (0,0), (-1,-1), 1.2),
         ('LEFTPADDING', (0,0), (-1,-1), 2.5),
         ('RIGHTPADDING', (0,0), (-1,-1), 2.5),
-        ('BACKGROUND', (0,1), (-1,4), green_bg),
-        ('BACKGROUND', (0,5), (-1,5), amber_bg),
+        ('BACKGROUND', (0,1), (-1,5), green_bg),
         ('GRID', (0,0), (-1,-1), 0.5, border_color),
         ('VALIGN', (0,0), (-1,-1), 'MIDDLE'),
     ]))
     elements.append(t1)
-    elements.append(Spacer(1, 4))
+    elements.append(Spacer(1, 3))
 
     # 4. Table 2: Multi-Promoter Tug-of-War Matrix
     elements.append(Paragraph("<b>TABLE 2: Multi-Promoter Kinetic Competition & Boundary Insulation (GWAS & 3C/4C Benchmarks)</b>", section_heading))
     locus2_sub = "<i>Context: Enhancers frequently bypass proximal promoters due to closed chromatin, or fail to contact neighboring genes due to CTCF insulation.</i>"
     elements.append(Paragraph(locus2_sub, meta_style))
-    elements.append(Spacer(1, 2))
+    elements.append(Spacer(1, 1.5))
 
     t2_headers = [
         Paragraph("Locus & Hit", th_style),
@@ -306,8 +305,8 @@ def generate_pdf():
     t2 = Table(t2_rows, colWidths=[68, 70, 72, 44, 76, 46, 52, 144])
     t2.setStyle(TableStyle([
         ('BACKGROUND', (0,0), (-1,0), colors.HexColor("#1e293b")),
-        ('BOTTOMPADDING', (0,0), (-1,-1), 1.5),
-        ('TOPPADDING', (0,0), (-1,-1), 1.5),
+        ('BOTTOMPADDING', (0,0), (-1,-1), 1.2),
+        ('TOPPADDING', (0,0), (-1,-1), 1.2),
         ('LEFTPADDING', (0,0), (-1,-1), 2.5),
         ('RIGHTPADDING', (0,0), (-1,-1), 2.5),
         ('GRID', (0,0), (-1,-1), 0.5, border_color),
@@ -315,124 +314,200 @@ def generate_pdf():
         ('VALIGN', (0,0), (-1,-1), 'MIDDLE'),
     ]))
     elements.append(t2)
-    elements.append(Spacer(1, 4))
+    elements.append(Spacer(1, 3))
 
-    # 5. Full Per-Row Candidate Triage Breakdown (Sample Display: CR-8q-e1)
-    elements.append(Paragraph("<b>AUDIT BREAKDOWN: Complete Per-Row Candidate Triage (Example: CR-8q-e1 in K562 Cells)</b>", section_heading))
-    locus3_sub = "<i>Transparent candidate filtering: Every gene in the locus domain evaluated. Proximal lncRNAs filtered by closed chromatin; distal MYC nominated.</i>"
+    # 5. Full Per-Row Candidate Triage Breakdown (Side-by-Side Loci)
+    elements.append(Paragraph("<b>AUDIT BREAKDOWN: Full Candidate Triage Matrices (8q24.21 vs 9p21.3 CAD Competition Fields)</b>", section_heading))
+    locus3_sub = "<i>Candidate field deconvolution: 8q24.21 filters inactive lncRNAs to promote MYC (67.5%). 9p21.3 allocates competitive share across active cluster (CDKN2B 36.1%, CDKN2A 28.1%, ANRIL 25.0%, MTAP 10.8%).</i>"
     elements.append(Paragraph(locus3_sub, meta_style))
-    elements.append(Spacer(1, 2))
+    elements.append(Spacer(1, 1.5))
 
-    t3_headers = [
+    # Table 3A: 8q24.21 Screen Candidate Triage (Left Table, width = 283 pt)
+    t3a_headers = [
         Paragraph("Rank", th_center),
-        Paragraph("Candidate Gene", th_style),
-        Paragraph("Biotype", th_style),
-        Paragraph("TSS Dist", th_center),
-        Paragraph("CAGE TPM", th_center),
-        Paragraph("P_contact", th_center),
-        Paragraph("BDB Score", th_center),
-        Paragraph("Comp. Share", th_center),
-        Paragraph("Triage Verdict & Attribution", th_style)
+        Paragraph("Gene (8q)", th_style),
+        Paragraph("Dist", th_center),
+        Paragraph("CAGE", th_center),
+        Paragraph("Score", th_center),
+        Paragraph("Share", th_center),
+        Paragraph("Triage Status", th_style)
     ]
-
-    t3_rows = [
-        t3_headers,
+    t3a_rows = [
+        t3a_headers,
         [
             Paragraph("<b>#1</b>", td_center),
             Paragraph("<b>MYC</b>", td_style),
-            Paragraph("protein_coding", td_style),
-            Paragraph("268,779 bp", td_center),
-            Paragraph("184.2 (open)", td_center),
-            Paragraph("0.0183", td_center),
+            Paragraph("268.8k", td_center),
+            Paragraph("184.2", td_center),
             Paragraph("0.0417", td_center),
             Paragraph("<b>67.5%</b>", td_center),
-            Paragraph("<font color='#166534'><b>PRIMARY TARGET</b></font> Open promoter + polymer looping contact", td_style)
+            Paragraph("<font color='#166534'><b>TARGET</b></font> (Open/Loop)", td_style)
         ],
         [
             Paragraph("#2", td_center),
             Paragraph("PVT1", td_style),
-            Paragraph("lncRNA", td_style),
-            Paragraph("327,858 bp", td_center),
-            Paragraph("12.8 (open)", td_center),
-            Paragraph("0.0150", td_center),
+            Paragraph("327.9k", td_center),
+            Paragraph("12.8", td_center),
             Paragraph("0.0201", td_center),
             Paragraph("32.5%", td_center),
-            Paragraph("<font color='#b45309'>COMPETING PROMOTER</font> Active transcription; secondary decoy", td_style)
+            Paragraph("<font color='#b45309'>DECOY</font> (Active prom.)", td_style)
         ],
         [
             Paragraph("#3", td_center),
             Paragraph("CASC8", td_style),
-            Paragraph("lncRNA", td_style),
-            Paragraph("15,484 bp", td_center),
-            Paragraph("0.05 (closed)", td_center),
-            Paragraph("0.2441", td_center),
+            Paragraph("15.5k", td_center),
+            Paragraph("0.05", td_center),
             Paragraph("0.0012", td_center),
             Paragraph("0.0%", td_center),
-            Paragraph("<font color='#64748b'>FILTERED</font> 1D Nearest TSS but promoter silenced in K562 (FANTOM5)", td_style)
+            Paragraph("<font color='#64748b'>FILTERED</font> (Closed TSS)", td_style)
         ],
         [
             Paragraph("#4", td_center),
             Paragraph("CCAT2", td_style),
-            Paragraph("lncRNA", td_style),
-            Paragraph("66,256 bp", td_center),
-            Paragraph("0.00 (closed)", td_center),
-            Paragraph("0.0702", td_center),
+            Paragraph("66.3k", td_center),
+            Paragraph("0.00", td_center),
             Paragraph("0.0004", td_center),
             Paragraph("0.0%", td_center),
-            Paragraph("<font color='#64748b'>FILTERED</font> Epigenetically silenced in K562 (no ATAC/CAGE peak)", td_style)
+            Paragraph("<font color='#64748b'>FILTERED</font> (Closed TSS)", td_style)
         ],
         [
             Paragraph("#5", td_center),
             Paragraph("POU5F1B", td_style),
-            Paragraph("protein_coding", td_style),
-            Paragraph("144,472 bp", td_center),
-            Paragraph("0.20 (closed)", td_center),
-            Paragraph("0.0335", td_center),
+            Paragraph("144.5k", td_center),
+            Paragraph("0.20", td_center),
             Paragraph("0.0002", td_center),
             Paragraph("0.0%", td_center),
-            Paragraph("<font color='#64748b'>FILTERED</font> Pseudogene transcript inactive in erythroleukemia", td_style)
+            Paragraph("<font color='#64748b'>FILTERED</font> (Pseudogene)", td_style)
         ],
         [
             Paragraph("#6", td_center),
             Paragraph("LRATD2", td_style),
-            Paragraph("protein_coding", td_style),
-            Paragraph("908,171 bp", td_center),
-            Paragraph("0.00 (closed)", td_center),
-            Paragraph("0.0001", td_center),
+            Paragraph("908.2k", td_center),
+            Paragraph("0.00", td_center),
             Paragraph("0.0000", td_center),
             Paragraph("0.0%", td_center),
-            Paragraph("<font color='#64748b'>FILTERED</font> Insulated across convergent CTCF loop boundary (126.9 Mb)", td_style)
+            Paragraph("<font color='#64748b'>FILTERED</font> (Insulated)", td_style)
         ]
     ]
-
-    t3 = Table(t3_rows, colWidths=[24, 52, 60, 52, 48, 40, 42, 42, 212])
-    t3.setStyle(TableStyle([
+    t3a = Table(t3a_rows, colWidths=[20, 48, 36, 30, 36, 32, 81])
+    t3a.setStyle(TableStyle([
         ('BACKGROUND', (0,0), (-1,0), colors.HexColor("#334155")),
-        ('BOTTOMPADDING', (0,0), (-1,-1), 1.2),
-        ('TOPPADDING', (0,0), (-1,-1), 1.2),
-        ('LEFTPADDING', (0,0), (-1,-1), 2.5),
-        ('RIGHTPADDING', (0,0), (-1,-1), 2.5),
+        ('BOTTOMPADDING', (0,0), (-1,-1), 1.0),
+        ('TOPPADDING', (0,0), (-1,-1), 1.0),
+        ('LEFTPADDING', (0,0), (-1,-1), 2.0),
+        ('RIGHTPADDING', (0,0), (-1,-1), 2.0),
         ('GRID', (0,0), (-1,-1), 0.5, border_color),
         ('BACKGROUND', (0,1), (-1,1), green_bg),
         ('BACKGROUND', (0,2), (-1,2), amber_bg),
         ('BACKGROUND', (0,3), (-1,-1), bg_light),
         ('VALIGN', (0,0), (-1,-1), 'MIDDLE'),
     ]))
-    elements.append(t3)
-    elements.append(Spacer(1, 4))
+
+    # Table 3B: 9p21.3 CAD Multi-Promoter Candidate Triage (Right Table, width = 283 pt)
+    t3b_headers = [
+        Paragraph("Rank", th_center),
+        Paragraph("Gene (9p)", th_style),
+        Paragraph("Dist", th_center),
+        Paragraph("CAGE", th_center),
+        Paragraph("Score", th_center),
+        Paragraph("Share", th_center),
+        Paragraph("Triage Status", th_style)
+    ]
+    t3b_rows = [
+        t3b_headers,
+        [
+            Paragraph("<b>#1</b>", td_center),
+            Paragraph("<b>CDKN2B</b>", td_style),
+            Paragraph("115.2k", td_center),
+            Paragraph("38.2", td_center),
+            Paragraph("0.0697", td_center),
+            Paragraph("<b>36.1%</b>", td_center),
+            Paragraph("<font color='#166534'><b>TARGET</b></font> (Primary prom.)", td_style)
+        ],
+        [
+            Paragraph("#2", td_center),
+            Paragraph("CDKN2A", td_style),
+            Paragraph("129.2k", td_center),
+            Paragraph("19.4", td_center),
+            Paragraph("0.0542", td_center),
+            Paragraph("28.1%", td_center),
+            Paragraph("<font color='#166534'><b>CO-TARGET</b></font> (3C active)", td_style)
+        ],
+        [
+            Paragraph("#3", td_center),
+            Paragraph("ANRIL", td_style),
+            Paragraph("130.3k", td_center),
+            Paragraph("11.2", td_center),
+            Paragraph("0.0482", td_center),
+            Paragraph("25.0%", td_center),
+            Paragraph("<font color='#b45309'>CO-TARGET</font> (lncRNA)", td_style)
+        ],
+        [
+            Paragraph("#4", td_center),
+            Paragraph("MTAP", td_style),
+            Paragraph("321.9k", td_center),
+            Paragraph("14.1", td_center),
+            Paragraph("0.0209", td_center),
+            Paragraph("10.8%", td_center),
+            Paragraph("<font color='#b45309'>CO-TARGET</font> (3C loop)", td_style)
+        ],
+        [
+            Paragraph("#5", td_center),
+            Paragraph("IFNA1", td_style),
+            Paragraph("684.0k", td_center),
+            Paragraph("0.00", td_center),
+            Paragraph("0.0000", td_center),
+            Paragraph("0.0%", td_center),
+            Paragraph("<font color='#64748b'>FILTERED</font> (Insulated)", td_style)
+        ],
+        [
+            Paragraph("-", td_center),
+            Paragraph("<i>Domain</i>", td_style),
+            Paragraph("21.7-22M", td_center),
+            Paragraph("HUVEC", td_center),
+            Paragraph("Sum", td_center),
+            Paragraph("100%", td_center),
+            Paragraph("Harismendy 2011 3C", td_style)
+        ]
+    ]
+    t3b = Table(t3b_rows, colWidths=[20, 48, 36, 30, 36, 32, 81])
+    t3b.setStyle(TableStyle([
+        ('BACKGROUND', (0,0), (-1,0), colors.HexColor("#334155")),
+        ('BOTTOMPADDING', (0,0), (-1,-1), 1.0),
+        ('TOPPADDING', (0,0), (-1,-1), 1.0),
+        ('LEFTPADDING', (0,0), (-1,-1), 2.0),
+        ('RIGHTPADDING', (0,0), (-1,-1), 2.0),
+        ('GRID', (0,0), (-1,-1), 0.5, border_color),
+        ('BACKGROUND', (0,1), (-1,1), green_bg),
+        ('BACKGROUND', (0,2), (-1,4), amber_bg),
+        ('BACKGROUND', (0,5), (-1,5), bg_light),
+        ('VALIGN', (0,0), (-1,-1), 'MIDDLE'),
+    ]))
+
+    # Side-by-Side Container Table (572 pt wide)
+    t3_container = Table([[t3a, t3b]], colWidths=[283, 283])
+    t3_container.setStyle(TableStyle([
+        ('VALIGN', (0,0), (-1,-1), 'TOP'),
+        ('BOTTOMPADDING', (0,0), (-1,-1), 0),
+        ('TOPPADDING', (0,0), (-1,-1), 0),
+        ('LEFTPADDING', (0,0), (-1,-1), 0),
+        ('RIGHTPADDING', (0,0), (-1,-1), 0),
+    ]))
+    elements.append(t3_container)
+    elements.append(Spacer(1, 3))
 
     # 6. Pilot Specifications & Scoring Formula Footnote Box
     footer_text = """
-    <b>SCORING FORMULA & METHODS:</b> Score = P_contact(d) * F_TAD * A_promoter. Polymer contact prior: P_contact = [5000 / (dist_bp + 5000)]^gamma (gamma=1.0 in-TAD, 1.75 across boundary). Boundary factor: F_TAD = 1.0 (in convergent CTCF loop), 0.08 (insulated). Promoter competence: A_promoter = log10(CAGE_TPM + 9) if active (CAGE >= 1 TPM / ATAC peak), else 0.005 (silenced). Competitive share = Score / sum(Active_Scores).
+    <b>SCORING FORMULA & METHODS:</b> In Silico ABC formulation: Score = P_contact(d) * F_TAD * A_promoter. Polymer contact prior: P_contact = [5000 / (dist_bp + 5000)]^gamma (gamma=1.0 inside TAD, 1.75 across boundary). Boundary factor: F_TAD = 1.0 (in convergent CTCF loop), 0.08 (insulated across boundary). Promoter competence: A_promoter = log10(CAGE_TPM + 9) if active (CAGE >= 1 TPM / ATAC peak), else 0.005 (silenced). Competitive share = Score / sum(Active_Scores_in_Domain).
     <br/><b>14-DAY PILOT AUDIT SPECIFICATION:</b> 20 to 50 candidate screening hits audited per engagement. Deliverables include: (1) Target De-Risking TSV with full candidate rankings, (2) Promoter Competition & Decoy Matrix, (3) Vector-mapped CTCF boundary profiles. Turnaround: 14 Business Days. Contact: <b>2032ushimanshu@gmail.com</b>
     """
-    footer_data = [[Paragraph(footer_text, ParagraphStyle('Footer', parent=body_text, fontSize=5.6, leading=7.4))]]
+    footer_data = [[Paragraph(footer_text, ParagraphStyle('Footer', parent=body_text, fontSize=5.5, leading=7.2))]]
     footer_table = Table(footer_data, colWidths=[572])
     footer_table.setStyle(TableStyle([
         ('BACKGROUND', (0,0), (-1,-1), colors.HexColor("#f1f5f9")),
         ('BOX', (0,0), (-1,-1), 0.8, colors.HexColor("#cbd5e1")),
-        ('TOPPADDING', (0,0), (-1,-1), 2.5),
-        ('BOTTOMPADDING', (0,0), (-1,-1), 2.5),
+        ('TOPPADDING', (0,0), (-1,-1), 2.0),
+        ('BOTTOMPADDING', (0,0), (-1,-1), 2.0),
         ('LEFTPADDING', (0,0), (-1,-1), 5),
         ('RIGHTPADDING', (0,0), (-1,-1), 5),
     ]))
