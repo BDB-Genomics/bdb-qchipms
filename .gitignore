@@ -32,3 +32,9 @@ tools/bin/
 *.bed
 *.bim
 *.fam
+
+# Proprietary Biophysics Core & Sensitive Pilots (IP protection)
+bdb_biophysics/
+scripts/run_*_pilot.py
+data/crispri_benchmark/
+data/gasperini_benchmark/

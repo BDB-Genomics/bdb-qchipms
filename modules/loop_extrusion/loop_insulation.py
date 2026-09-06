@@ -24,19 +24,32 @@ CTCF_CONSENSUS_CORE = "CCACCAGGGGGCGCTA"
 
 def compute_ctcf_orientation_affinity(motif_sequence: str, strand: str) -> Dict[str, any]:
     """
-    Evaluates CTCF motif binding presence and orientation vector.
+    Evaluates CTCF motif binding presence and orientation vector with robust error handling.
     """
-    motif = motif_sequence.upper()
-    # Simple Hamming alignment against core consensus
-    matches = sum(1 for a, b in zip(motif, CTCF_CONSENSUS_CORE) if a == b)
-    score = matches / len(CTCF_CONSENSUS_CORE) if len(CTCF_CONSENSUS_CORE) > 0 else 0.0
-    
+    try:
+        if not motif_sequence or not isinstance(motif_sequence, str):
+            score = 0.0
+            motif = ""
+        else:
+            motif = motif_sequence.upper().strip()
+            core_len = len(CTCF_CONSENSUS_CORE)
+            if core_len == 0:
+                score = 0.0
+            else:
+                matches = sum(1 for a, b in zip(motif, CTCF_CONSENSUS_CORE) if a == b)
+                score = float(matches) / float(core_len)
+    except Exception:
+        score = 0.0
+        motif = str(motif_sequence) if motif_sequence else ""
+
+    valid_strand = strand if strand in ['+', '-'] else '+'
+
     return {
         'sequence': motif,
-        'strand': strand,
+        'strand': valid_strand,
         'consensus_match_pct': round(score * 100.0, 1),
         'is_functional_ctcf': bool(score >= 0.70),
-        'vector': '+ (Forward --->)' if strand == '+' else '- (Reverse <---)'
+        'vector': '+ (Forward --->)' if valid_strand == '+' else '- (Reverse <---)'
     }
 
 def evaluate_loop_anchor_pair(left_ctcf: Dict[str, any], right_ctcf: Dict[str, any], distance_bp: int) -> Dict[str, any]:
@@ -90,7 +103,7 @@ if __name__ == '__main__':
     
     left_ctcf = compute_ctcf_orientation_affinity("CCACCAGGGGGCGCTA", "+")
     right_ctcf = compute_ctcf_orientation_affinity("CCACCAGGGGGCGCTA", "-")
-    right_broken = compute_ctcf_orientation_affinity("CCTTAAGGGGGCGCTA", "-") # 3 SNPs breaking core motif
+    right_broken = compute_ctcf_orientation_affinity("CCTTAATTTTTTCCTA", "-") # Disruptive non-coding variant
     
     print("\n1. Convergent CTCF Pair (Intact 450 kb TAD):")
     res_convergent = evaluate_loop_anchor_pair(left_ctcf, right_ctcf, 450000)

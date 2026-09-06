@@ -70,5 +70,51 @@
       "fantom5_library": "CNhs10738 (HepG2 / Liver)",
       "tad_boundary_source": "Rao et al. 2014 Cell (chr19:44.8-45.2 Mb)"
     }
+  },
+  "gene_raw_api_artifacts": {
+    "RBL2": {
+      "ensembl_json": "data/references/raw_api_responses/RBL2_ensembl.json",
+      "chrom": "16",
+      "start": 53433977,
+      "end": 53491668,
+      "strand": 1,
+      "canonical_tss": 53433977,
+      "assembly": "GRCh38"
+    },
+    "CCDC26": {
+      "ensembl_json": "data/references/raw_api_responses/CCDC26_ensembl.json",
+      "chrom": "8",
+      "start": 128634199,
+      "end": 129723023,
+      "strand": -1,
+      "canonical_tss": 129723023,
+      "assembly": "GRCh38"
+    },
+    "CDKN2B-AS1": {
+      "ensembl_json": "data/references/raw_api_responses/CDKN2B-AS1_ensembl.json",
+      "chrom": "9",
+      "start": 21994139,
+      "end": 22212895,
+      "strand": 1,
+      "canonical_tss": 21994139,
+      "assembly": "GRCh38"
+    }
+  },
+  "fantom5_accession_mapping": {
+    "source_url": "https://fantom.gsc.riken.jp/5/datafiles/latest/extra/DRA_accession_tables/DRA000991.txt",
+    "grep_artifact": "data/references/fantom5_library_mapping_grep.txt",
+    "verified_pairs": {
+      "CNhs12334": "FF:10824-111C5 (K562 leukemia cell line)",
+      "CNhs10872": "FF:11243-116E1 (HUVEC endothelial)",
+      "CNhs12065": "FF:11469-119C2 (Preadipocyte)",
+      "CNhs11756": "FF:10049-101G4 (Pancreas / Islet)"
+    }
+  },
+  "greenwald2019_pubmed_verification": {
+    "pmid": "31064983",
+    "doi": "10.1038/s41467-019-09975-4",
+    "title": "Pancreatic islet chromatin accessibility and conformation reveals distal enhancer networks of type 2 diabetes risk.",
+    "journal": "Nat Commun. 2019;10(1):2078.",
+    "json_artifact": "data/references/greenwald2019_pubmed_31064983.json"
   }
 }
