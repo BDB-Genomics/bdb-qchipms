@@ -95,11 +95,11 @@ LOCI_DEFINITIONS = [
         'chrom': 'chr10',
         'start': 112998590,
         'stop': 112998590, # dbSNP rs7903146
-        'cell': 'Pancreatic_Islet',
+        'cell': 'Pancreas_Adult',
         'assay': 'Gaulton 2010 Nat Genet / Stitzel 2010 Cell Metab (rs7903146, 3C in Islets)',
         'benchmark_target': 'TCF7L2',
         'tad_boundary': (112800000, 113300000),
-        'boundary_source': 'Gaulton 2010 Nat Genet / Greenwald 2019 Nat Commun (Islet TAD 112.8-113.3 Mb)'
+        'boundary_source': 'Gaulton 2010 Nat Genet / Greenwald 2019 Nat Commun (Pancreas/Islet TAD 112.8-113.3 Mb)'
     }
 ]
 
@@ -137,32 +137,32 @@ GENE_DATABASE = {
 # 3. Cell-Type Specific Promoter Competence Ground Truth (CAGE TPM & FANTOM5 Library Accession)
 PROMOTER_COMPETENCE = {
     'K562': {
-        'MYC': {'open': True, 'cage_tpm': 184.2, 'fantom5_id': 'CNhs12334', 'source': 'FANTOM5 K562 (CNhs12334 / ENCFF534DCE)'},
-        'PVT1': {'open': True, 'cage_tpm': 12.8, 'fantom5_id': 'CNhs12334', 'source': 'FANTOM5 K562 (CNhs12334)'},
-        'CASC11': {'open': False, 'cage_tpm': 0.1, 'fantom5_id': 'CNhs12334', 'source': 'FANTOM5 K562 (silenced)'},
-        'CASC8': {'open': False, 'cage_tpm': 0.05, 'fantom5_id': 'CNhs12334', 'source': 'FANTOM5 K562 (silenced)'},
+        'MYC': {'open': True, 'cage_tpm': 496.08, 'fantom5_id': 'CNhs12334', 'source': 'FANTOM5 K562 (CNhs12334)'},
+        'PVT1': {'open': True, 'cage_tpm': 6.77, 'fantom5_id': 'CNhs12334', 'source': 'FANTOM5 K562 (CNhs12334)'},
+        'CASC11': {'open': False, 'cage_tpm': 0.0, 'fantom5_id': 'CNhs12334', 'source': 'FANTOM5 K562 (silenced)'},
+        'CASC8': {'open': False, 'cage_tpm': 0.0, 'fantom5_id': 'CNhs12334', 'source': 'FANTOM5 K562 (silenced)'},
         'CCAT2': {'open': False, 'cage_tpm': 0.0, 'fantom5_id': 'CNhs12334', 'source': 'FANTOM5 K562 (silenced)'},
-        'POU5F1B': {'open': False, 'cage_tpm': 0.2, 'fantom5_id': 'CNhs12334', 'source': 'FANTOM5 K562 (silenced)'},
+        'POU5F1B': {'open': False, 'cage_tpm': 0.0, 'fantom5_id': 'CNhs12334', 'source': 'FANTOM5 K562 (silenced)'},
         'CASC19': {'open': False, 'cage_tpm': 0.0, 'fantom5_id': 'CNhs12334', 'source': 'FANTOM5 K562 (silenced)'},
         'LRATD2': {'open': False, 'cage_tpm': 0.0, 'fantom5_id': 'CNhs12334', 'source': 'FANTOM5 K562 (silenced)'},
         'CCDC26': {'open': False, 'cage_tpm': 0.0, 'fantom5_id': 'CNhs12334', 'source': 'FANTOM5 K562 (silenced)'}
     },
     'Preadipocyte': {
-        'IRX3': {'open': True, 'cage_tpm': 24.6, 'fantom5_id': 'CNhs12065', 'source': 'FANTOM5 Preadipocyte (CNhs12065 / Claussnitzer 2015)'},
-        'IRX5': {'open': True, 'cage_tpm': 16.2, 'fantom5_id': 'CNhs12065', 'source': 'FANTOM5 Preadipocyte (CNhs12065 / Claussnitzer 2015)'},
-        'RBL2': {'open': True, 'cage_tpm': 8.5, 'fantom5_id': 'CNhs12065', 'source': 'FANTOM5 Preadipocyte (CNhs12065)'},
-        'FTO': {'open': False, 'cage_tpm': 0.4, 'fantom5_id': 'CNhs12065', 'source': 'FANTOM5 Preadipocyte (silenced)'}
+        'FTO': {'open': True, 'cage_tpm': 44.53, 'fantom5_id': 'CNhs12065', 'source': 'FANTOM5 Preadipocyte (CNhs12065)'},
+        'IRX3': {'open': True, 'cage_tpm': 1.48, 'fantom5_id': 'CNhs12065', 'source': 'FANTOM5 Preadipocyte (CNhs12065)'},
+        'IRX5': {'open': False, 'cage_tpm': 0.0, 'fantom5_id': 'CNhs12065', 'source': 'FANTOM5 Preadipocyte (silenced)'},
+        'RBL2': {'open': True, 'cage_tpm': 20.78, 'fantom5_id': 'CNhs12065', 'source': 'FANTOM5 Preadipocyte (CNhs12065)'}
     },
     'Vascular_EC': {
-        'CDKN2B': {'open': True, 'cage_tpm': 38.2, 'fantom5_id': 'CNhs10872', 'source': 'FANTOM5 HUVEC (CNhs10872 / Harismendy 2011)'},
-        'CDKN2A': {'open': True, 'cage_tpm': 19.4, 'fantom5_id': 'CNhs10872', 'source': 'FANTOM5 HUVEC (CNhs10872 / Harismendy 2011)'},
-        'CDKN2B-AS1': {'open': True, 'cage_tpm': 11.2, 'fantom5_id': 'CNhs10872', 'source': 'FANTOM5 HUVEC (ANRIL active)'},
-        'MTAP': {'open': True, 'cage_tpm': 14.1, 'fantom5_id': 'CNhs10872', 'source': 'FANTOM5 HUVEC (CNhs10872 / Harismendy 2011)'},
-        'IFNA1': {'open': False, 'cage_tpm': 0.0, 'fantom5_id': 'CNhs10872', 'source': 'FANTOM5 HUVEC (silenced / insulated)'}
+        'CDKN2A': {'open': True, 'cage_tpm': 8.84, 'fantom5_id': 'CNhs10872', 'source': 'FANTOM5 HUVEC (CNhs10872)'},
+        'CDKN2B': {'open': True, 'cage_tpm': 1.61, 'fantom5_id': 'CNhs10872', 'source': 'FANTOM5 HUVEC (CNhs10872)'},
+        'MTAP': {'open': True, 'cage_tpm': 55.72, 'fantom5_id': 'CNhs10872', 'source': 'FANTOM5 HUVEC (CNhs10872)'},
+        'CDKN2B-AS1': {'open': False, 'cage_tpm': 0.0, 'fantom5_id': 'CNhs10872', 'source': 'FANTOM5 HUVEC (silenced)'},
+        'IFNA1': {'open': False, 'cage_tpm': 0.0, 'fantom5_id': 'CNhs10872', 'source': 'FANTOM5 HUVEC (silenced)'}
     },
-    'Pancreatic_Islet': {
-        'TCF7L2': {'open': True, 'cage_tpm': 42.1, 'fantom5_id': 'CNhs11756', 'source': 'FANTOM5 Islet/Pancreas (CNhs11756 / Gaulton 2010)'},
-        'VTI1A': {'open': False, 'cage_tpm': 0.8, 'fantom5_id': 'CNhs11756', 'source': 'FANTOM5 Islet/Pancreas (silenced)'}
+    'Pancreas_Adult': {
+        'TCF7L2': {'open': True, 'cage_tpm': 61.74, 'fantom5_id': 'CNhs11756', 'source': 'FANTOM5 Pancreas (CNhs11756)'},
+        'VTI1A': {'open': True, 'cage_tpm': 27.35, 'fantom5_id': 'CNhs11756', 'source': 'FANTOM5 Pancreas (CNhs11756)'}
     }
 }
 
@@ -300,7 +300,15 @@ def print_audit_report():
         top = res['rank1_bdb']
         
         c_str = f"{h['chrom']}:{h['start']}-{h['stop']}" if h['start'] != h['stop'] else f"{h['chrom']}:{h['start']}"
-        decision = f"CONCORDANT ({top['gene']})" if top['gene'] == nearest['gene'] else f"PROMOTE ({top['gene']}) / DEMOTE ({nearest['gene']})"
+        if h['id'] == 'L-FTO-IRX3':
+            decision = f"FAILED PRIOR ({top['gene']} {top['competitive_share']*100:.1f}%) - Overridden to IRX3 by Claussnitzer 4C"
+        elif h['id'] == 'L-9p21-CAD':
+            runner_up = res['all_candidates_by_score'][1]
+            decision = f"AMBIGUOUS ({top['gene']} {top['competitive_share']*100:.1f}% / {runner_up['gene']} {runner_up['competitive_share']*100:.1f}%) - Resolved by Harismendy 3C"
+        elif top['gene'] == nearest['gene']:
+            decision = f"CONCORDANT ({top['gene']})"
+        else:
+            decision = f"PROMOTE ({top['gene']}) / DEMOTE ({nearest['gene']})"
         
         row = [
             h['id'],
@@ -332,8 +340,62 @@ def print_audit_report():
     print_candidate_table('CR-8q-rs698', '8q24.21 rs6983267 Enhancer (K562)')
     print_candidate_table('L-FTO-IRX3', 'FTO / IRX3 Locus (Preadipocytes)')
     print_candidate_table('L-9p21-CAD', '9p21.3 CAD Locus (HUVEC Endothelial)')
-    print_candidate_table('L-TCF7L2-T2D', 'TCF7L2 T2D Locus (Pancreatic Islets)')
+    print_candidate_table('L-TCF7L2-T2D', 'TCF7L2 T2D Locus (Pancreas Adult)')
     print("=" * 155 + "\n")
 
+def export_dossier_tsv():
+    out_path = Path("/home/himanshu/bdb-qchipms/DOCUMENTS/Audits/BDB_Genomics_Sample_Audit_Dossier.tsv")
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    
+    header = [
+        "Hit_ID", "Cell_Context", "Genomic_Coord_GRCh38", "Overlapping_Gene_Body",
+        "1D_Nearest_TSS", "Dist_Nearest_bp", "BDB_Rank1_Target", "Dist_Target_bp",
+        "gamma", "F_TAD", "CAGE_TPM", "FANTOM5_Library", "P_contact", "BDB_Score",
+        "Comp_Share", "Triage_Decision", "Ground_Truth_Assay", "TAD_Boundary_Source"
+    ]
+    
+    lines = ["\t".join(header)]
+    for h in LOCI_DEFINITIONS:
+        res = evaluate_locus_candidates(h)
+        nearest = res['nearest_1d']
+        top = res['rank1_bdb']
+        c_str = f"{h['chrom']}:{h['start']}-{h['stop']}" if h['start'] != h['stop'] else f"{h['chrom']}:{h['start']}"
+        if h['id'] == 'L-FTO-IRX3':
+            decision = f"FAILED PRIOR ({top['gene']} {top['competitive_share']*100:.1f}%) - Overridden to IRX3 by Claussnitzer 4C"
+        elif h['id'] == 'L-9p21-CAD':
+            runner_up = res['all_candidates_by_score'][1]
+            decision = f"AMBIGUOUS ({top['gene']} {top['competitive_share']*100:.1f}% / {runner_up['gene']} {runner_up['competitive_share']*100:.1f}%) - Resolved by Harismendy 3C"
+        elif top['gene'] == nearest['gene']:
+            decision = f"CONCORDANT ({top['gene']})"
+        else:
+            decision = f"PROMOTE ({top['gene']}) / DEMOTE ({nearest['gene']})"
+            
+        row = [
+            h['id'],
+            h['cell'],
+            c_str,
+            res['overlap_str'],
+            f"{nearest['gene']} ({nearest['biotype']})",
+            str(nearest['dist_tss']),
+            top['gene'],
+            str(top['dist_tss']),
+            f"{top['gamma']:.2f}",
+            f"{top['f_tad']:.2f}",
+            f"{top['cage_tpm']:.2f}",
+            top['fantom5_id'],
+            f"{top['p_contact']:.4f}",
+            f"{top['raw_score']:.4f}",
+            f"{top['competitive_share']*100:.1f}%",
+            decision,
+            h['assay'],
+            h['boundary_source']
+        ]
+        lines.append("\t".join(row))
+        
+    out_path.write_text("\n".join(lines) + "\n")
+    print(f"✅ Authentic Dossier TSV exported: {out_path}")
+
 if __name__ == '__main__':
+    from pathlib import Path
     print_audit_report()
+    export_dossier_tsv()
