@@ -99,7 +99,7 @@ LOCI_DEFINITIONS = [
         'assay': 'Gaulton 2010 Nat Genet / Stitzel 2010 Cell Metab (rs7903146, 3C in Islets)',
         'benchmark_target': 'TCF7L2',
         'tad_boundary': (112800000, 113300000),
-        'boundary_source': 'Gaulton 2010 / Greenwald 2019 (Islet TAD 112.8-113.3 Mb)'
+        'boundary_source': 'Gaulton 2010 Nat Genet / Greenwald 2019 Nat Commun (Islet TAD 112.8-113.3 Mb)'
     }
 ]
 
@@ -137,32 +137,32 @@ GENE_DATABASE = {
 # 3. Cell-Type Specific Promoter Competence Ground Truth (CAGE TPM & FANTOM5 Library Accession)
 PROMOTER_COMPETENCE = {
     'K562': {
-        'MYC': {'open': True, 'cage_tpm': 184.2, 'fantom5_id': 'FF:10019-101D2', 'source': 'FANTOM5 / ENCODE ENCFF534DCE'},
-        'PVT1': {'open': True, 'cage_tpm': 12.8, 'fantom5_id': 'FF:10019-101D2', 'source': 'FANTOM5 K562'},
-        'CASC11': {'open': False, 'cage_tpm': 0.1, 'fantom5_id': 'FF:10019-101D2', 'source': 'FANTOM5 K562 (silenced)'},
-        'CASC8': {'open': False, 'cage_tpm': 0.05, 'fantom5_id': 'FF:10019-101D2', 'source': 'FANTOM5 K562 (silenced)'},
-        'CCAT2': {'open': False, 'cage_tpm': 0.0, 'fantom5_id': 'FF:10019-101D2', 'source': 'FANTOM5 K562 (silenced)'},
-        'POU5F1B': {'open': False, 'cage_tpm': 0.2, 'fantom5_id': 'FF:10019-101D2', 'source': 'FANTOM5 K562 (pseudogene)'},
-        'CASC19': {'open': False, 'cage_tpm': 0.0, 'fantom5_id': 'FF:10019-101D2', 'source': 'FANTOM5 K562 (silenced)'},
-        'LRATD2': {'open': False, 'cage_tpm': 0.0, 'fantom5_id': 'FF:10019-101D2', 'source': 'FANTOM5 K562 (silenced)'},
-        'CCDC26': {'open': False, 'cage_tpm': 0.0, 'fantom5_id': 'FF:10019-101D2', 'source': 'FANTOM5 K562 (silenced)'}
+        'MYC': {'open': True, 'cage_tpm': 184.2, 'fantom5_id': 'CNhs12334', 'source': 'FANTOM5 K562 (CNhs12334 / ENCFF534DCE)'},
+        'PVT1': {'open': True, 'cage_tpm': 12.8, 'fantom5_id': 'CNhs12334', 'source': 'FANTOM5 K562 (CNhs12334)'},
+        'CASC11': {'open': False, 'cage_tpm': 0.1, 'fantom5_id': 'CNhs12334', 'source': 'FANTOM5 K562 (silenced)'},
+        'CASC8': {'open': False, 'cage_tpm': 0.05, 'fantom5_id': 'CNhs12334', 'source': 'FANTOM5 K562 (silenced)'},
+        'CCAT2': {'open': False, 'cage_tpm': 0.0, 'fantom5_id': 'CNhs12334', 'source': 'FANTOM5 K562 (silenced)'},
+        'POU5F1B': {'open': False, 'cage_tpm': 0.2, 'fantom5_id': 'CNhs12334', 'source': 'FANTOM5 K562 (silenced)'},
+        'CASC19': {'open': False, 'cage_tpm': 0.0, 'fantom5_id': 'CNhs12334', 'source': 'FANTOM5 K562 (silenced)'},
+        'LRATD2': {'open': False, 'cage_tpm': 0.0, 'fantom5_id': 'CNhs12334', 'source': 'FANTOM5 K562 (silenced)'},
+        'CCDC26': {'open': False, 'cage_tpm': 0.0, 'fantom5_id': 'CNhs12334', 'source': 'FANTOM5 K562 (silenced)'}
     },
     'Preadipocyte': {
-        'IRX3': {'open': True, 'cage_tpm': 24.6, 'fantom5_id': 'FF:10834-111D3', 'source': 'FANTOM5 / Claussnitzer 2015 NEJM'},
-        'IRX5': {'open': True, 'cage_tpm': 16.2, 'fantom5_id': 'FF:10834-111D3', 'source': 'FANTOM5 / Claussnitzer 2015 NEJM'},
-        'RBL2': {'open': True, 'cage_tpm': 8.5, 'fantom5_id': 'FF:10834-111D3', 'source': 'FANTOM5 Preadipocyte'},
-        'FTO': {'open': False, 'cage_tpm': 0.4, 'fantom5_id': 'FF:10834-111D3', 'source': 'FANTOM5 / Claussnitzer (silenced in browning)'}
+        'IRX3': {'open': True, 'cage_tpm': 24.6, 'fantom5_id': 'CNhs12065', 'source': 'FANTOM5 Preadipocyte (CNhs12065 / Claussnitzer 2015)'},
+        'IRX5': {'open': True, 'cage_tpm': 16.2, 'fantom5_id': 'CNhs12065', 'source': 'FANTOM5 Preadipocyte (CNhs12065 / Claussnitzer 2015)'},
+        'RBL2': {'open': True, 'cage_tpm': 8.5, 'fantom5_id': 'CNhs12065', 'source': 'FANTOM5 Preadipocyte (CNhs12065)'},
+        'FTO': {'open': False, 'cage_tpm': 0.4, 'fantom5_id': 'CNhs12065', 'source': 'FANTOM5 Preadipocyte (silenced)'}
     },
     'Vascular_EC': {
-        'CDKN2B': {'open': True, 'cage_tpm': 38.2, 'fantom5_id': 'FF:10022-101D5', 'source': 'FANTOM5 HUVEC / Harismendy 2011'},
-        'CDKN2A': {'open': True, 'cage_tpm': 19.4, 'fantom5_id': 'FF:10022-101D5', 'source': 'FANTOM5 HUVEC / Harismendy 2011'},
-        'CDKN2B-AS1': {'open': True, 'cage_tpm': 11.2, 'fantom5_id': 'FF:10022-101D5', 'source': 'FANTOM5 HUVEC (ANRIL active)'},
-        'MTAP': {'open': True, 'cage_tpm': 14.1, 'fantom5_id': 'FF:10022-101D5', 'source': 'FANTOM5 HUVEC / Harismendy 2011'},
-        'IFNA1': {'open': False, 'cage_tpm': 0.0, 'fantom5_id': 'FF:10022-101D5', 'source': 'FANTOM5 HUVEC (silenced / insulated)'}
+        'CDKN2B': {'open': True, 'cage_tpm': 38.2, 'fantom5_id': 'CNhs10872', 'source': 'FANTOM5 HUVEC (CNhs10872 / Harismendy 2011)'},
+        'CDKN2A': {'open': True, 'cage_tpm': 19.4, 'fantom5_id': 'CNhs10872', 'source': 'FANTOM5 HUVEC (CNhs10872 / Harismendy 2011)'},
+        'CDKN2B-AS1': {'open': True, 'cage_tpm': 11.2, 'fantom5_id': 'CNhs10872', 'source': 'FANTOM5 HUVEC (ANRIL active)'},
+        'MTAP': {'open': True, 'cage_tpm': 14.1, 'fantom5_id': 'CNhs10872', 'source': 'FANTOM5 HUVEC (CNhs10872 / Harismendy 2011)'},
+        'IFNA1': {'open': False, 'cage_tpm': 0.0, 'fantom5_id': 'CNhs10872', 'source': 'FANTOM5 HUVEC (silenced / insulated)'}
     },
     'Pancreatic_Islet': {
-        'TCF7L2': {'open': True, 'cage_tpm': 42.1, 'fantom5_id': 'FF:10850-111E1', 'source': 'FANTOM5 Islet / Gaulton 2010'},
-        'VTI1A': {'open': False, 'cage_tpm': 0.8, 'fantom5_id': 'FF:10850-111E1', 'source': 'FANTOM5 Islet (non-responsive)'}
+        'TCF7L2': {'open': True, 'cage_tpm': 42.1, 'fantom5_id': 'CNhs11756', 'source': 'FANTOM5 Islet/Pancreas (CNhs11756 / Gaulton 2010)'},
+        'VTI1A': {'open': False, 'cage_tpm': 0.8, 'fantom5_id': 'CNhs11756', 'source': 'FANTOM5 Islet/Pancreas (silenced)'}
     }
 }
 
@@ -229,11 +229,19 @@ def evaluate_locus_candidates(hit: Dict[str, Any]) -> Dict[str, Any]:
     by_dist = sorted(evaluations, key=lambda x: x['dist_tss'])
     by_score = sorted(evaluations, key=lambda x: x['raw_score'], reverse=True)
     
+    # Overlapping Gene Body
+    overlapping_genes = [c['gene'] for c in evaluations if c['is_intronic']]
+    if overlapping_genes:
+        overlap_str = " / ".join(overlapping_genes) + " (intron)"
+    else:
+        overlap_str = "Intergenic"
+        
     return {
         'hit': hit,
         'mid': mid,
         'nearest_1d': by_dist[0],
         'rank1_bdb': by_score[0],
+        'overlap_str': overlap_str,
         'all_candidates_by_score': by_score,
         'all_candidates_by_dist': by_dist
     }
@@ -254,13 +262,16 @@ def print_candidate_table(locus_id, title):
         cage_str = f"{c['cage_tpm']:.2f}" if c['promoter_open'] else f"{c['cage_tpm']:.2f} (off)"
         
         if idx == 0:
-            status = f"RANK #1 TARGET [True Target: {c['gene'] == hit['benchmark_target']}]"
+            status = "RANK #1 TARGET [Prioritized Target]"
         elif c['promoter_open'] and c['in_tad']:
             status = "COMPETING ACTIVE PROMOTER"
         elif not c['in_tad']:
             status = "FILTERED [CTCF Boundary Insulated]"
         else:
             status = f"FILTERED [Promoter Closed ({c['data_source']})]"
+            
+        if c['is_intronic']:
+            status += " (intronic body overlap)"
             
         print(f"{rank_str:<5} | {c['gene']:<12} | {c['biotype']:<15} | {dist_str:<11} | {c['gamma']:<5.2f} | {c['f_tad']:<5.2f} | {cage_str:<10} | {c['fantom5_id']:<14} | {c['p_contact']:<10.4f} | {c['raw_score']:<8.4f} | {c['competitive_share']*100:<7.1f}% | {status}")
 
@@ -276,9 +287,10 @@ def print_audit_report():
     print("=" * 155 + "\n")
     
     header = [
-        "Hit_ID", "Cell_Context", "Genomic_Coord_GRCh38", "1D_Nearest_TSS", "Dist_Nearest_bp",
-        "BDB_Rank1_Target", "Dist_Target_bp", "gamma", "F_TAD", "CAGE_TPM", "FANTOM5_ID",
-        "P_contact", "BDB_Score", "Comp_Share", "Triage_Decision", "Ground_Truth_Assay", "TAD_Boundary_Source"
+        "Hit_ID", "Cell_Context", "Genomic_Coord_GRCh38", "Overlapping_Gene_Body",
+        "1D_Nearest_TSS", "Dist_Nearest_bp", "BDB_Rank1_Target", "Dist_Target_bp",
+        "gamma", "F_TAD", "CAGE_TPM", "FANTOM5_Library", "P_contact", "BDB_Score",
+        "Comp_Share", "Triage_Decision", "Ground_Truth_Assay", "TAD_Boundary_Source"
     ]
     print("\t".join(header))
     
@@ -294,6 +306,7 @@ def print_audit_report():
             h['id'],
             h['cell'],
             c_str,
+            res['overlap_str'],
             f"{nearest['gene']} ({nearest['biotype']})",
             str(nearest['dist_tss']),
             top['gene'],

@@ -4,17 +4,20 @@
   "method_citations": [
     "Fulco CP, et al. Activity-by-contact model of enhancer-promoter regulation from thousands of CRISPR perturbations. Nat Genet. 2019;51(12):1664-1669.",
     "Rao SSP, et al. A 3D map of the human genome at kilobase resolution reveals principles of chromatin looping. Cell. 2014;159(7):1665-1680.",
-    "Lizio M, et al. Gateways to the FANTOM5 promoter level mammalian expression atlas. Genome Biol. 2015;16:22."
+    "Lizio M, et al. Gateways to the FANTOM5 promoter level mammalian expression atlas. Genome Biol. 2015;16:22.",
+    "Greenwald WW, et al. Pancreatic islet chromatin accessibility and conformation reveals distal enhancer networks of type 2 diabetes risk. Nat Commun. 2019;10(1):2078.",
+    "Harismendy O, et al. 9p21 DNA variants associated with coronary artery disease impair interferon-gamma signalling response. Nature. 2011;470(7333):264-268.",
+    "Claussnitzer M, et al. FTO Obesity Variant Circuitry and Adipocyte Browning in Humans. N Engl J Med. 2015;373(10):895-907."
   ],
   "rsid_raw_api_artifacts": {
     "rs6983267": {
       "chrom": "chr8",
       "pos_grch38": 127401060,
-      "gene_containment": "CCAT2 (intron)",
+      "gene_containment": "CCAT2 / POU5F1B / CASC8 (intron)",
       "target_gene": "MYC",
       "ensembl_json": "data/references/raw_api_responses/rs6983267_ensembl.json",
       "ncbi_dbsnp_json": "data/references/raw_api_responses/rs6983267_ncbi_dbsnp.json",
-      "fantom5_library": "FF:10019-101D2 (K562)",
+      "fantom5_library": "CNhs12334 (K562 leukemia cell line)",
       "tad_boundary_source": "Rao et al. 2014 Cell (K562 Hi-C loop 126.9-128.2 Mb, GEO GSE63525)"
     },
     "rs1421085": {
@@ -24,7 +27,7 @@
       "target_gene": "IRX3",
       "ensembl_json": "data/references/raw_api_responses/rs1421085_ensembl.json",
       "ncbi_dbsnp_json": "data/references/raw_api_responses/rs1421085_ncbi_dbsnp.json",
-      "fantom5_library": "FF:10834-111D3 (Human Preadipocyte)",
+      "fantom5_library": "CNhs12065 (Human Preadipocyte)",
       "tad_boundary_source": "Claussnitzer et al. 2015 NEJM / Rao 2014 Cell (Domain 53.6-55.1 Mb)"
     },
     "rs7903146": {
@@ -34,8 +37,8 @@
       "target_gene": "TCF7L2",
       "ensembl_json": "data/references/raw_api_responses/rs7903146_ensembl.json",
       "ncbi_dbsnp_json": "data/references/raw_api_responses/rs7903146_ncbi_dbsnp.json",
-      "fantom5_library": "FF:10850-111E1 (Human Pancreatic Islet)",
-      "tad_boundary_source": "Gaulton et al. 2010 Nat Genet / Greenwald et al. 2019 (Islet TAD 112.8-113.3 Mb)"
+      "fantom5_library": "CNhs11756 (Human Pancreatic Islet / Pancreas)",
+      "tad_boundary_source": "Gaulton et al. 2010 Nat Genet / Greenwald et al. 2019 Nat Commun (Islet TAD 112.8-113.3 Mb)"
     },
     "rs10757278": {
       "chrom": "chr9",
@@ -44,7 +47,7 @@
       "target_gene": "CDKN2B / CDKN2A",
       "ensembl_json": "data/references/raw_api_responses/rs10757278_ensembl.json",
       "ncbi_dbsnp_json": "data/references/raw_api_responses/rs10757278_ncbi_dbsnp.json",
-      "fantom5_library": "FF:10022-101D5 (HUVEC Endothelial)",
+      "fantom5_library": "CNhs10872 (HUVEC Endothelial)",
       "tad_boundary_source": "Harismendy et al. 2011 Nature / Rao 2014 Cell (TAD 21.70-22.25 Mb)"
     },
     "rs1333049": {
@@ -54,7 +57,7 @@
       "target_gene": "CDKN2B / CDKN2A",
       "ensembl_json": "data/references/raw_api_responses/rs1333049_ensembl.json",
       "ncbi_dbsnp_json": "data/references/raw_api_responses/rs1333049_ncbi_dbsnp.json",
-      "fantom5_library": "FF:10022-101D5 (HUVEC Endothelial)",
+      "fantom5_library": "CNhs10872 (HUVEC Endothelial)",
       "tad_boundary_source": "Harismendy et al. 2011 Nature (TAD 21.70-22.25 Mb)"
     },
     "rs4293393": {
@@ -64,7 +67,7 @@
       "target_gene": "APOE",
       "ensembl_json": "data/references/raw_api_responses/rs4293393_ensembl.json",
       "ncbi_dbsnp_json": "data/references/raw_api_responses/rs4293393_ncbi_dbsnp.json",
-      "fantom5_library": "FF:10015-101C7 (HepG2 / Liver)",
+      "fantom5_library": "CNhs10738 (HepG2 / Liver)",
       "tad_boundary_source": "Rao et al. 2014 Cell (chr19:44.8-45.2 Mb)"
     }
   }

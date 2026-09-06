@@ -298,7 +298,7 @@ def generate_pdf():
             Paragraph("<b>TCF7L2</b> (Islet TF)", td_style),
             Paragraph("48.6 kb", td_center),
             Paragraph("100.0%<br/>(VTI1A: 0%)", td_center),
-            Paragraph("<font color='#166534'><b>[CONCORDANT / INSULATED]</b></font> 3C in human islets confirms intronic loop to TCF7L2 (Gaulton 2010 Nat Genet). VTI1A (551 kb) is insulated across CTCF boundary.", td_style)
+            Paragraph("<font color='#166534'><b>[CONCORDANT / INSULATED]</b></font> 3C in human islets confirms intronic loop to TCF7L2 (Gaulton 2010 Nat Genet / Greenwald 2019 Nat Commun). VTI1A (551 kb) is insulated across CTCF boundary.", td_style)
         ]
     ]
 
@@ -377,7 +377,7 @@ def generate_pdf():
             Paragraph("0.20", td_center),
             Paragraph("0.0002", td_center),
             Paragraph("0.0%", td_center),
-            Paragraph("<font color='#64748b'>FILTERED</font> (Pseudogene)", td_style)
+            Paragraph("<font color='#64748b'>FILTERED</font> (Closed prom.)", td_style)
         ],
         [
             Paragraph("#6", td_center),
