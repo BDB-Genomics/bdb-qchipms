@@ -136,25 +136,42 @@ class DynamicBiophysicalEngine:
             in_tad = (locus_data["ctcf_left"]["pos"] <= tss_pos <= locus_data["ctcf_right"]["pos"]) if is_convergent else False
             promoter_open = gene_info.get("promoter_open", True)
             
-            # Decay model: s^(-1.0) inside TAD, s^(-1.75) across boundary
+            # 1. Chromatin Polymer Contact Prior: P_contact = (d_0 / (dist_bp + d_0))^gamma
+            # d_0 = 5000 bp saturation; gamma = 1.0 inside TAD, gamma = 1.75 across boundary
             gamma = 1.0 if in_tad else 1.75
-            dist_score = 1.0 / ((max(1000, dist_bp) / 1000.0) ** gamma)
-            domain_weight = loop_boost if in_tad else 1.0
-            # Epigenomic accessibility: Inactive/closed promoters cannot establish functional transcriptional activation
-            atac_weight = 3.0 if promoter_open else 0.01
+            p_contact = (5000.0 / (dist_bp + 5000.0)) ** gamma
             
-            # Physical perturbation magnitude
+            # 2. TAD Boundary & CTCF Insulation Factor
+            f_tad = 1.0 if in_tad else 0.08
+            
+            # 3. Cell-Type Promoter Competence (CAGE TPM / ATAC Open State)
+            cage_tpm = gene_info.get("cage_tpm", 50.0 if promoter_open else 0.0)
+            if promoter_open:
+                a_promoter = math.log10(max(1.0, cage_tpm) + 9.0) # Scaled ~1.0 to 2.3
+            else:
+                a_promoter = 0.005 # Silenced promoters cannot establish productive transactivation
+            
+            # 4. Sequence-Level Biophysical Perturbation Factor
             phys_weight = max(1.0, abs(delta_phi) + (helical_theta / 45.0) + abs(delta_ebend))
             
-            final_target_score = dist_score * domain_weight * atac_weight * phys_weight
+            final_target_score = p_contact * f_tad * a_promoter * phys_weight
             
             gene_rankings.append({
                 "gene": gene_name,
                 "distance_bp": dist_bp,
                 "in_tad": in_tad,
                 "promoter_open": promoter_open,
-                "target_score": round(final_target_score, 3)
+                "cage_tpm": cage_tpm,
+                "p_contact": round(p_contact, 4),
+                "f_tad": round(f_tad, 4),
+                "a_promoter": round(a_promoter, 4),
+                "target_score": round(final_target_score, 4)
             })
+            
+        # Calculate competitive share among active promoters in domain
+        sum_active = sum(g["target_score"] for g in gene_rankings if g["promoter_open"] and g["in_tad"])
+        for g in gene_rankings:
+            g["competitive_share"] = round(g["target_score"] / sum_active, 4) if sum_active > 0 and g["promoter_open"] and g["in_tad"] else 0.0
             
         gene_rankings.sort(key=lambda x: x["target_score"], reverse=True)
         top_1_gene = gene_rankings[0]["gene"]
