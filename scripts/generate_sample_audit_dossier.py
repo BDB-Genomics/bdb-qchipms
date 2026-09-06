@@ -143,7 +143,7 @@ def generate_pdf():
 
     # 2. Executive Scope & Objective Box
     callout_text = """
-    <b>AUDIT OBJECTIVE & THE FTO FAILURE MODE PITCH:</b> CRISPR screening and GWAS hits frequently map to non-coding deserts where 1D distance heuristics misassign causal targets. Crucially, a naive computational prior (distance x expression) also fails at complex loci: at FTO, naive priors rank FTO #1 at 92.7% because the target tissue expresses FTO highly (44.5 TPM) and sits 65 kb proximal, missing the true targets (IRX3/IRX5) 0.5 Mb away. Resolving this requires locus-specific measured contacts (4C/Hi-C) : which is precisely what BDB-Genomics' 14-day audit adds over a prior.
+    <b>AUDIT OBJECTIVE & THE FTO FAILURE MODE PITCH:</b> CRISPR screening and GWAS hits frequently map to non-coding deserts where 1D distance heuristics misassign causal targets. Crucially, a naive computational prior (distance x expression) also fails at complex loci: at FTO, naive priors rank FTO #1 at 92.7% because the target tissue expresses FTO highly (44.5 TPM) and sits 65 kb proximal, missing the true targets (IRX3/IRX5) 0.5 Mb away. Resolving this requires locus-specific measured contacts (4C/Hi-C), which is precisely what BDB-Genomics' 14-day audit adds over a prior.
     <br/><b>BENCHMARK GROUND TRUTH:</b> On held-out CRISPRi distance-failure loci (N=67 where 1D nearest-TSS has 0% accuracy), BDB-Genomics achieves <b>83.58% Top-3 accuracy (56/67)</b>, outperforming the Broad Institute ABC model (79.10%, 53/67). All coordinates anchored to Ensembl GRCh38 Release 113 / dbSNP Build 156. Authentic CAGE TPMs extracted from FANTOM5 phase 1/2.
     """
     callout_data = [[Paragraph(callout_text, ParagraphStyle('Callout', parent=body_text, fontSize=5.9, leading=7.7))]]
@@ -222,7 +222,7 @@ def generate_pdf():
             Paragraph("244.4 kb", td_center),
             Paragraph("0.0200", td_center),
             Paragraph("73.6%", td_center),
-            Paragraph("<font color='#166534'><b>[PROMOTE MYC / DEMOTE CASC8]</b></font> CRISPRi titration validates 78% MYC knockdown; CASC8 unaffected.", td_style)
+            Paragraph("<font color='#166534'><b>[PROMOTE MYC / DEMOTE CASC8]</b></font> CRISPRi titration validates selective MYC loss (Fulco 2016); CASC8 unaffected.", td_style)
         ],
         [
             Paragraph("<b>CR-8q-rs698</b>", td_center),
