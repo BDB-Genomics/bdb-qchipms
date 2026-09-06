@@ -498,7 +498,7 @@ def generate_pdf():
 
     # 6. Pilot Specifications & Scoring Formula Footnote Box
     footer_text = """
-    <b>SCORING FORMULA & PROVENANCE:</b> In Silico ABC formulation: Score = P_contact(d) * F_TAD * A_promoter. Polymer contact prior: P_contact = [5000 / (dist_bp + 5000)]^gamma (gamma=1.0 inside TAD, 1.75 across boundary). Boundary factor: F_TAD = 1.0 (in convergent CTCF loop), 0.08 (insulated across boundary). Promoter competence: A_promoter = log10(CAGE_TPM + 9) if active (CAGE >= 1 TPM), else 0.005 (silenced). TPM values extracted directly from authentic FANTOM5 phase 1/2 CAGE (CNhs12334, CNhs10872, CNhs12065, CNhs11756).
+    <b>SCORING FORMULA & PROVENANCE:</b> In Silico ABC formulation: Score = P_contact(d) * F_TAD * A_promoter. Polymer contact prior: P_contact = [5000 / (dist_bp + 5000)]^gamma (gamma=1.0 inside TAD, 1.75 across boundary). Boundary factor: F_TAD = 1.0 (in convergent CTCF loop), 0.08 (insulated across boundary). Promoter competence: A_promoter = log10(CAGE_TPM + 9) if active (CAGE >= 1 TPM), else 0.005 (silenced). Shares assume a mutually-exclusive contact model; measured contacts (3C/4C) discriminate competition from sharing. CAGE TPMs extracted from authentic FANTOM5 phase 1/2 (CNhs12334, CNhs10872, CNhs12065, CNhs11756).
     <br/><b>14-DAY PILOT AUDIT SPECIFICATION:</b> 20 to 50 candidate screening hits audited per engagement. Deliverables include: (1) Target De-Risking TSV with full candidate rankings, (2) Promoter Competition & Decoy Matrix, (3) Vector-mapped CTCF boundary profiles. Turnaround: 14 Business Days. Contact: <b>2032ushimanshu@gmail.com</b>
     """
     footer_data = [[Paragraph(footer_text, ParagraphStyle('Footer', parent=body_text, fontSize=5.4, leading=7.1))]]
