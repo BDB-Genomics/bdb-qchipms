@@ -24,8 +24,9 @@ message-msg_*.png
 data/incoming/
 data/real_web_data/
 
-# large reference binaries (re-downloadable, see scripts/build_eur_reference.sh)
-data/atlas/ref_panel/
+# large reference binaries and regional atlas slices
+data/atlas/
+Jolma_TF_Codebook_BDB.png
 tools/plink2
 tools/bin/
 *.pgen
